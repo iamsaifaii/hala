@@ -1,0 +1,47 @@
+/* ─── Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 548;
+  font-style: italic;
+}
+
+/* ─── Tailwind ───────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─── Theme tokens (Tailwind v4 style) ──────────────── */
+@theme {
+  --font-family-sans: var(--font-inter), sans-serif;
+  --font-family-poppins: var(--font-poppins), sans-serif;
+  --font-family-ebgaramond: 'EB Garamond', serif;
+
+  --color-brand-dark: #111111;
+  --color-brand-cream: #f5f5e4;
+  --color-brand-muted: #555555;
+  --color-brand-faint: #888888;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+/* ─── CSS Variables (Design Tokens) ─────────────────── */
+:root {
+  --color-bg: #f5f5e4;
+  --color-dark: #111111;
+  --color-muted: #555555;
+  --color-faint: #888888;
+  --color-footer: #111111;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+body {
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
