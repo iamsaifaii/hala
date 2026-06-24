@@ -27,7 +27,7 @@ export default function MarketingSolutions() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
 
         {/* Left Column: Headline and Interactive Tags */}
-        <div className="flex flex-col z-10">
+        <div className="flex flex-col z-10 text-center lg:text-left items-center lg:items-start order-1">
           <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] tracking-tight text-[#f0f0f0] mb-4 md:mb-6">
             Marketing Solutions for<br className="hidden lg:block" /> <span className="eb-garamond text-white italic pr-2 md:pr-4">Businesses</span>
           </h2>
@@ -36,7 +36,7 @@ export default function MarketingSolutions() {
           </p>
 
           {/* Pill Tags Grid */}
-          <div className="flex flex-wrap gap-3 max-w-2xl">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 max-w-2xl">
             {marketingTags.map((tag) => {
               const isActive = activeTag === tag.name;
               const Icon = tag.icon;
@@ -61,7 +61,7 @@ export default function MarketingSolutions() {
         </div>
 
         {/* Right Column: Illustration and Description */}
-        <div className="flex flex-col gap-12 z-10">
+        <div className="flex flex-col gap-12 z-10 order-2">
 
           {/* Custom Image Illustration */}
           <div className="relative w-full mx-auto lg:ml-auto select-none rounded-[20px] md:rounded-[32px] overflow-hidden drop-shadow-2xl">
