@@ -28,7 +28,7 @@ export default function MarketingSolutions() {
 
         {/* Left Column: Headline and Interactive Tags */}
         <div className="flex flex-col z-10">
-          <h2 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] tracking-tight text-[#f0f0f0] mb-4 md:mb-6">
+          <h2 className="font-poppins font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] tracking-tight text-[#f0f0f0] mb-4 md:mb-6">
             Marketing Solutions for<br className="hidden lg:block" /> <span className="eb-garamond text-white italic pr-2 md:pr-4">Businesses</span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-zinc-300 font-medium mb-8 md:mb-12">
