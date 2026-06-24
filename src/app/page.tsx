@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero/Hero';
 import WaveMarquee from '@/components/WaveMarquee/WaveMarquee';
+import MarketingSolutions from '@/components/MarketingSolutions/MarketingSolutions';
 import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <WaveMarquee />
+        <MarketingSolutions />
       </main>
       <Footer />
     </div>
