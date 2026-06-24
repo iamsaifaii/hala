@@ -19,7 +19,7 @@ export default function MarketingSolutions() {
   ];
 
   return (
-    <section className="w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16 lg:py-24 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px] mt-8 md:mt-12">
+    <section className="font-poppins w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16 lg:py-24 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px] mt-8 md:mt-12">
 
       {/* Background decorative elements (subtle grain/texture would go here in prod) */}
       <div className="absolute top-0 right-0 w-full h-24 bg-gradient-to-b from-[#f8f6ed] to-transparent opacity-[0.03]"></div>
@@ -28,8 +28,8 @@ export default function MarketingSolutions() {
 
         {/* Left Column: Headline and Interactive Tags */}
         <div className="flex flex-col z-10">
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] tracking-tight text-[#f0f0f0] mb-4 md:mb-6">
-            Marketing Solutions for<br className="hidden lg:block" /> <span className="text-white italic pr-2 md:pr-4">Businesses</span>
+          <h2 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.1] tracking-tight text-[#f0f0f0] mb-4 md:mb-6">
+            Marketing Solutions for<br className="hidden lg:block" /> <span className="eb-garamond text-white italic pr-2 md:pr-4">Businesses</span>
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-zinc-300 font-medium mb-8 md:mb-12">
             Select a service to see our expertise in action.
@@ -76,8 +76,8 @@ export default function MarketingSolutions() {
 
           {/* Description Text & CTA */}
           <div className="flex flex-col bg-zinc-900/50 p-6 md:p-8 rounded-[20px] md:rounded-3xl border border-zinc-800 backdrop-blur-sm">
-            <h3 className="font-serif text-2xl md:text-3xl text-white mb-3 md:mb-4">
-              One agency. <span className="italic text-zinc-300">Complete growth.</span>
+            <h3 className="font-poppins font-semibold text-2xl md:text-3xl text-white mb-3 md:mb-4">
+              One agency. <span className="eb-garamond italic text-zinc-300 font-normal">Complete growth.</span>
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
               At Hala Smart Technologies, we specialize in delivering digital marketing services to help your business grow and stand out in today's competitive market. From result-driven SEO services and high-performing PPC campaigns to creative content marketing and strategic social media management, we cover all aspects of online growth.
