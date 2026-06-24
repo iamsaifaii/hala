@@ -18,7 +18,7 @@ export default function MarketingSolutions() {
   ];
 
   return (
-    <section className="w-full bg-[#1a1a1a] px-6 md:px-12 lg:px-20 py-24 md:py-32 relative overflow-hidden">
+    <section className="w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] lg:max-w-[1200px] mx-auto bg-[#1a1a1a] px-6 md:px-8 lg:px-12 py-12 md:py-16 relative overflow-hidden rounded-[32px] md:rounded-[40px] my-8 md:my-12">
       
       {/* Background decorative elements (subtle grain/texture would go here in prod) */}
       <div className="absolute top-0 right-0 w-full h-24 bg-gradient-to-b from-[#f8f6ed] to-transparent opacity-[0.03]"></div>
