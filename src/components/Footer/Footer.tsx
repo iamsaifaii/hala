@@ -1,94 +1,79 @@
-import { FiGithub, FiTwitter, FiInstagram, FiLinkedin, FiYoutube } from 'react-icons/fi';
-import Image from 'next/image';
-
-// ─── Shared class constants ───────────────────────────
-const navLink = 'no-underline text-[#cccccc] text-[15px] font-medium transition-colors duration-200 hover:text-white flex items-center justify-center gap-3 w-full';
-const colHeading = 'font-ebgaramond font-medium text-2xl text-white mb-5 text-center w-full';
-const socialLink = 'text-[#aaaaaa] hover:text-white transition-colors duration-200 bg-[#222] p-2.5 rounded-full hover:bg-[#333]';
-const legalLink = 'no-underline text-[#888] hover:text-white transition-colors text-[13px] font-medium';
-
-const SOCIAL_ICONS = [FiYoutube, FiGithub, FiInstagram, FiTwitter, FiLinkedin];
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-white flex flex-col rounded-t-[60px] w-full mt-10 px-6 pt-12 pb-6 sm:px-10 sm:pt-14 sm:pb-8 md:px-16 md:pt-16 md:pb-8 border-t border-[#222]">
-
-      {/* ── Top section: Links & Contact ── */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-[1100px] w-full mx-auto mb-12 md:mb-16">
-
-        {/* Company */}
-        <div className="flex flex-col items-center w-full">
-          <div className="flex flex-col items-center w-full">
-            <h4 className={`${colHeading} !mb-4`}>Company</h4>
-            <ul className="list-none p-0 m-0 flex flex-col gap-2.5 items-center w-full">
-              {['About Us', 'Careers', 'Our Team', 'Case Studies', 'Contact'].map(item => (
-                <li key={item} className="w-full">
-                  <a href="#" className={navLink}>{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <footer className="w-full px-6 md:px-12 lg:px-20 pt-20 pb-8 bg-black flex flex-col gap-16 md:gap-32">
+      
+      {/* Top Navigation Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 md:gap-8 max-w-7xl w-full mx-auto">
+        
+        {/* Company Column */}
+        <div className="flex flex-col space-y-4">
+          <h3 className="font-serif text-3xl md:text-4xl text-zinc-400 mb-2">Company</h3>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">About</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors group flex items-center w-max">
+            Careers 
+            <ArrowRight className="w-4 h-4 ml-1 opacity-40 group-hover:translate-x-1 group-hover:opacity-100 transition-all duration-300" />
+          </a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Trust Center</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Become an Affiliate</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Media Kit</a>
         </div>
 
-        {/* Services */}
-        <div className="flex flex-col items-center w-full">
-          <div className="flex flex-col items-center w-full">
-            <h4 className={`${colHeading} !mb-4`}>Services</h4>
-            <ul className="list-none p-0 m-0 flex flex-col gap-2.5 items-center w-full">
-              {['SEO Optimization', 'Social Media Marketing', 'PPC Campaigns', 'Content Creation', 'Web Development'].map(item => (
-                <li key={item} className="w-full">
-                  <a href="#" className={navLink}>{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Services Column (Replaced Product) */}
+        <div className="flex flex-col space-y-4">
+          <h3 className="font-serif text-3xl md:text-4xl text-zinc-400 mb-2">Services</h3>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">SEO Optimization</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Social Media Marketing</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">PPC Campaigns</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Content Creation</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Web Development</a>
         </div>
 
-        {/* Resources */}
-        <div className="flex flex-col items-center w-full">
-          <div className="flex flex-col items-center w-full">
-            <h4 className={`${colHeading} !mb-4`}>Resources</h4>
-            <ul className="list-none p-0 m-0 flex flex-col gap-2.5 items-center w-full">
-              {['Marketing Blog', 'Free SEO Audit', 'Industry Reports', 'Talk to Experts', 'Help Center'].map(item => (
-                <li key={item} className="w-full">
-                  <a href="#" className={navLink}>{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      {/* ── Brand lockup ── */}
-      <div className="flex items-center justify-center mb-8 md:mb-12 w-full overflow-hidden px-4">
-        <Image
-          src="/halalogofooter.png"
-          alt="Hala Technologies"
-          width={1000}
-          height={200}
-          className="w-full max-w-[1000px] h-auto object-contain"
-        />
-      </div>
-
-      {/* ── Bottom bar ── */}
-      <div className="flex flex-col md:flex-row justify-between items-center w-full border-t border-[#333] pt-6 md:pt-8 gap-6 md:gap-0 max-w-[1200px] mx-auto">
-        <div className="flex gap-4 md:gap-6 items-center justify-center flex-wrap">
-          <span className="text-[13px] font-semibold text-[#aaa] tracking-wide uppercase">&copy; Hala Technologies 2026</span>
-          <div className="hidden md:block w-1 h-1 rounded-full bg-[#555]"></div>
-          {['Terms', 'Privacy', 'Data Controls'].map(label => (
-            <a key={label} href="#" className={legalLink}>{label}</a>
-          ))}
-        </div>
-        <div className="flex gap-3 justify-center">
-          {SOCIAL_ICONS.map((Icon, i) => (
-            <a key={i} href="#" className={socialLink}>
-              <Icon size={18} />
-            </a>
-          ))}
+        {/* Resources Column */}
+        <div className="flex flex-col space-y-4">
+          <h3 className="font-serif text-3xl md:text-4xl text-zinc-400 mb-2">Resources</h3>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Marketing Blog</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Free SEO Audit</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Industry Reports</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Talk to Experts</a>
+          <a href="#" className="font-medium text-[15px] text-zinc-300 hover:text-white transition-colors">Help Center</a>
         </div>
       </div>
 
+      {/* Bottom Giant Brand Section */}
+      <div className="w-full flex flex-col justify-end mx-auto">
+        <div className="flex items-end gap-[3vw]">
+          
+          {/* SVG Logo Icon (Fluid sizing based on viewport width) */}
+          <svg 
+            viewBox="0 0 100 120" 
+            className="w-[18vw] md:w-[10vw] fill-white shrink-0 mb-[1vw]"
+            aria-hidden="true"
+          >
+            {/* Using tall rounded rectangles to mimic the bar chart logo */}
+            <rect x="0" y="0" width="18" height="120" rx="9" />
+            <rect x="27" y="50" width="18" height="70" rx="9" />
+            <rect x="54" y="30" width="18" height="90" rx="9" />
+            <rect x="81" y="0" width="18" height="120" rx="9" />
+          </svg>
+
+          {/* Giant Wordmark */}
+          <h1 className="text-[24vw] md:text-[18vw] font-bold leading-[0.75] tracking-tighter text-white m-0 p-0">
+            Hala
+          </h1>
+        </div>
+        
+        {/* Optional bottom meta/copyright bar */}
+        <div className="mt-12 md:mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-600">
+          <p>© {new Date().getFullYear()} Hala Technology. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-zinc-300 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-zinc-300 transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
