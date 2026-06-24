@@ -16,12 +16,12 @@ interface ServiceItem {
 
 // ─── Data constants ────────────────────────────────────
 const SERVICES: ServiceItem[] = [
-  { Icon: Search,           title: 'Search Engine Optimization', desc: 'Rank higher and get more organic traffic'     },
-  { Icon: MousePointerClick,title: 'Pay-Per-Click Advertising',   desc: 'Targeted ads to boost your sales instantly'  },
-  { Icon: Share2,           title: 'Social Media Marketing',       desc: 'Build your community and engage audiences'  },
-  { Icon: PenTool,          title: 'Content Creation',             desc: 'Compelling content that drives conversions' },
-  { Icon: LayoutTemplate,   title: 'Web Development',              desc: 'Fast, modern, and responsive websites'      },
-  { Icon: BarChart3,        title: 'Analytics & Reporting',        desc: 'Data-driven insights for continuous growth' },
+  { Icon: Search, title: 'Search Engine Optimization', desc: 'Rank higher and get more organic traffic' },
+  { Icon: MousePointerClick, title: 'Pay-Per-Click Advertising', desc: 'Targeted ads to boost your sales instantly' },
+  { Icon: Share2, title: 'Social Media Marketing', desc: 'Build your community and engage audiences' },
+  { Icon: PenTool, title: 'Content Creation', desc: 'Compelling content that drives conversions' },
+  { Icon: LayoutTemplate, title: 'Web Development', desc: 'Fast, modern, and responsive websites' },
+  { Icon: BarChart3, title: 'Analytics & Reporting', desc: 'Data-driven insights for continuous growth' },
 ];
 
 const SIMPLE_NAV_LINKS = ['Case Studies', 'About Us', 'Contact'];
@@ -41,21 +41,21 @@ function ServiceLink({ Icon, title, desc }: ServiceItem) {
 
 // ─── Main component ────────────────────────────────────
 export default function Navbar() {
-  const [menuOpen,      setMenuOpen]      = useState(false);
-  const [servicesOpen,  setServicesOpen]  = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [scrolled,      setScrolled]      = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Track scroll position for dynamic blur effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
     };
-    
+
     // Check initial position and attach listener
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -72,7 +72,7 @@ export default function Navbar() {
 
   // Shared classes for navigation buttons
   const navBtnClass = 'flex items-center gap-[3px] text-[13.5px] font-medium text-[#444] bg-transparent border-none cursor-pointer transition-[color,background] duration-150 whitespace-nowrap py-2 px-3 rounded-lg hover:text-[#111] hover:bg-[#f4f4f4] w-full md:w-auto text-left';
-  
+
   // Shared helper for dropdown panels
   const getDropdownClass = (isOpen: boolean, isMobile: boolean) => {
     const base = 'flex-col gap-4';
@@ -129,7 +129,7 @@ export default function Navbar() {
         Main navbar container.
         Notice there is NO background color on the nav itself to ensure perfect layering.
       */}
-      <nav 
+      <nav
         className={`flex items-center justify-between border border-[#e5e5e5] rounded-xl py-3 px-4 sm:px-5 w-full max-w-[1080px] shadow-sm relative transition-all duration-300`}
       >
         {/* 
@@ -141,7 +141,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2.5 z-10">
           <Image src="/halalogo.png" alt="Hala Logo" width={80} height={26} className="h-[26px] w-auto" priority />
-          <span className="font-poppins text-[15px] font-bold tracking-[-0.3px] text-[#111]">Hala Technologies</span>
+          <span className="font-poppins text-[15px] font-bold tracking-[-0.3px] text-[#111] whitespace-nowrap">Hala Technology</span>
         </div>
 
         {/* Desktop Nav (Hidden on Mobile) */}
