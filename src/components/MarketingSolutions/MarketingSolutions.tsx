@@ -64,13 +64,13 @@ export default function MarketingSolutions() {
         <div className="flex flex-col gap-12 z-10">
 
           {/* Custom Image Illustration */}
-          <div className="relative w-full aspect-square max-w-md mx-auto lg:ml-auto select-none rounded-[32px] overflow-hidden drop-shadow-2xl">
+          <div className="relative w-full mx-auto lg:ml-auto select-none rounded-[32px] overflow-hidden drop-shadow-2xl">
             <Image 
               src="/pic.webp" 
               alt="Marketing Illustration" 
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 500px"
+              width={1280}
+              height={720}
+              className="w-full h-auto object-cover"
             />
           </div>
 
