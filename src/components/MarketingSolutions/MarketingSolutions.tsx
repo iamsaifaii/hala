@@ -66,7 +66,7 @@ export default function MarketingSolutions() {
           {/* Custom Image Illustration */}
           <div className="relative w-full mx-auto lg:ml-auto select-none rounded-[20px] md:rounded-[32px] overflow-hidden drop-shadow-2xl">
             <Image
-              src="/picmarketingsolution.svg"
+              src="/pic.png"
               alt="Marketing Illustration"
               width={1280}
               height={720}
