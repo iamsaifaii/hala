@@ -29,7 +29,7 @@ export default function MarketingSolutions() {
         <div className="flex flex-col z-10">
           <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-[#f0f0f0] mb-6">
             Marketing Solutions <br className="hidden md:block" />
-            for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d1b8e0] to-[#b3d4ff] italic pr-4">Businesses</span>
+            for <span className="text-white italic pr-4">Businesses</span>
           </h2>
           <p className="text-xl md:text-2xl text-zinc-300 font-medium mb-12">
             Select a service to see our expertise in action.
@@ -68,7 +68,7 @@ export default function MarketingSolutions() {
             <svg viewBox="0 0 400 400" className="w-full h-full drop-shadow-2xl">
               {/* Decorative blob backgrounds */}
               <path d="M 50 200 C 50 100, 150 50, 250 80 C 350 110, 380 200, 320 280 C 260 360, 100 350, 50 200 Z" fill="#2a2a2a" />
-              <path d="M 80 250 C 60 150, 200 100, 280 180 C 360 260, 300 350, 200 330 C 100 310, 100 350, 80 250 Z" fill="#d1b8e0" />
+              <path d="M 80 250 C 60 150, 200 100, 280 180 C 360 260, 300 350, 200 330 C 100 310, 100 350, 80 250 Z" fill="#ffffff" opacity="0.1" />
 
               {/* Stylized Laptop/Dashboard */}
               <g transform="translate(140, 80) rotate(15)">
@@ -99,13 +99,13 @@ export default function MarketingSolutions() {
 
               {/* Floating "Growth" Bubble */}
               <g transform="translate(280, 50)">
-                <path d="M 0 30 C -10 0, 30 -20, 70 -10 C 110 0, 110 40, 80 60 C 50 80, 20 80, 5 60 C -10 40, 0 80, -20 90 C -10 70, 0 45, 0 30 Z" fill="#f4a261" />
+                <path d="M 0 30 C -10 0, 30 -20, 70 -10 C 110 0, 110 40, 80 60 C 50 80, 20 80, 5 60 C -10 40, 0 80, -20 90 C -10 70, 0 45, 0 30 Z" fill="#ffffff" />
                 <path d="M 15 25 Q 30 10 45 25 T 75 25" fill="none" stroke="#1e1e1e" strokeWidth="6" strokeLinecap="round" />
               </g>
 
               {/* Floating Analytics Bubble */}
               <g transform="translate(40, 70) rotate(-10)">
-                <path d="M 10 40 C 0 10, 40 -10, 80 10 C 120 30, 110 70, 80 90 C 50 110, 20 110, 5 90 C -10 70, 0 110, -20 120 C -10 100, 0 75, 10 40 Z" fill="#e9ecef" />
+                <path d="M 10 40 C 0 10, 40 -10, 80 10 C 120 30, 110 70, 80 90 C 50 110, 20 110, 5 90 C -10 70, 0 110, -20 120 C -10 100, 0 75, 10 40 Z" fill="#ffffff" />
                 <rect x="20" y="30" width="8" height="40" rx="4" fill="#1e1e1e" />
                 <rect x="40" y="15" width="8" height="55" rx="4" fill="#1e1e1e" />
                 <rect x="60" y="45" width="8" height="25" rx="4" fill="#1e1e1e" />
@@ -122,7 +122,7 @@ export default function MarketingSolutions() {
             <p className="text-zinc-400 leading-relaxed mb-8">
               At Hala Smart Technologies, we specialize in delivering digital marketing services to help your business grow and stand out in today's competitive market. From result-driven SEO services and high-performing PPC campaigns to creative content marketing and strategic social media management, we cover all aspects of online growth.
             </p>
-            <button className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#d1b8e0] text-zinc-950 font-bold py-4 px-8 rounded-xl hover:bg-white transition-colors self-start shadow-[0_0_20px_rgba(209,184,224,0.3)]">
+            <button className="flex items-center justify-center gap-3 w-full sm:w-auto bg-white text-black font-bold py-4 px-8 rounded-xl hover:bg-zinc-200 transition-colors self-start shadow-[0_0_20px_rgba(255,255,255,0.1)]">
               <Search className="w-5 h-5" />
               Get a Free Audit
             </button>
