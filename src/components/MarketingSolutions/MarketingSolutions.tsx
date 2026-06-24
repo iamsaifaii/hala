@@ -66,7 +66,7 @@ export default function MarketingSolutions() {
           {/* Custom Image Illustration */}
           <div className="relative w-full mx-auto lg:ml-auto select-none rounded-[20px] md:rounded-[32px] overflow-hidden drop-shadow-2xl">
             <Image
-              src="/pic.webp"
+              src="/picmarketingsolution.svg"
               alt="Marketing Illustration"
               width={1280}
               height={720}
@@ -77,7 +77,7 @@ export default function MarketingSolutions() {
           {/* Description Text & CTA */}
           <div className="flex flex-col bg-zinc-900/50 p-6 md:p-8 rounded-[20px] md:rounded-3xl border border-zinc-800 backdrop-blur-sm">
             <h3 className="font-poppins font-semibold text-2xl md:text-3xl text-white mb-3 md:mb-4">
-              One agency. <span className="eb-garamond italic text-zinc-300 font-normal">Complete growth.</span>
+              One agency. Complete growth.
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
               At Hala Smart Technologies, we specialize in delivering digital marketing services to help your business grow and stand out in today's competitive market. From result-driven SEO services and high-performing PPC campaigns to creative content marketing and strategic social media management, we cover all aspects of online growth.
