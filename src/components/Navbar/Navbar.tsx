@@ -82,8 +82,8 @@ export default function Navbar() {
     return `${isOpen ? 'flex' : 'hidden'} md:group-hover:flex ${base} absolute top-[calc(100%+10px)] left-0 bg-white border-[1.5px] border-[#111] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] w-[360px] p-6 z-[100] before:absolute before:content-[""] before:w-full before:h-[20px] before:-top-[20px] before:left-0`;
   };
 
-  // Reusable NavLinks component so we can render it differently for mobile vs desktop
-  const NavLinks = ({ isMobile = false }) => (
+  // Reusable NavLinks function so we can render it differently for mobile vs desktop
+  const renderNavLinks = (isMobile = false) => (
     <ul className={`flex ${isMobile ? 'flex-col items-start w-full gap-2' : 'flex-row items-center gap-4'} list-none m-0 p-0`}>
       {/* Services */}
       <li className={`relative group ${isMobile ? 'w-full' : ''}`}>
@@ -140,13 +140,13 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center gap-2.5 z-10">
-          <Image src="/halalogo.png" alt="Hala Logo" width={80} height={26} className="h-[26px] w-auto" priority />
+          <Image src="/halalogo.png" alt="Hala Logo" width={80} height={26} style={{ width: 'auto', height: '26px' }} priority />
           <span className="font-poppins text-[15px] font-bold tracking-[-0.3px] text-[#111] whitespace-nowrap">Hala Technology</span>
         </div>
 
         {/* Desktop Nav (Hidden on Mobile) */}
         <div className="hidden md:flex md:flex-row md:items-center md:gap-4 w-full justify-end z-10">
-          <NavLinks />
+          {renderNavLinks()}
           <div className="w-px h-8 bg-[#e0e0e0] mx-2" />
           <button className="flex items-center justify-center gap-[7px] py-2.5 px-5 bg-[#111] text-white rounded-lg text-[13.5px] font-semibold cursor-pointer transition-colors hover:bg-[#333] shadow-sm">
             <Grid2X2 size={16} />
@@ -177,7 +177,7 @@ export default function Navbar() {
       */}
       {menuOpen && (
         <div className="md:hidden absolute top-[calc(100%+15px)] left-4 right-4 bg-white border border-[#e5e5e5] rounded-[18px] shadow-lg z-[9999] p-6 flex flex-col items-start gap-4">
-          <NavLinks isMobile={true} />
+          {renderNavLinks(true)}
           <div className="w-full h-px bg-[#e0e0e0] my-1" />
           <button className="flex items-center justify-center gap-[7px] py-2.5 px-5 bg-[#111] text-white rounded-lg text-[13.5px] font-semibold cursor-pointer w-full transition-colors hover:bg-[#333] shadow-sm">
             <Grid2X2 size={16} />
