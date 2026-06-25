@@ -69,26 +69,26 @@ export default function OurServices() {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center bg-white p-8 md:p-10 rounded-[32px] border border-[#e5e5e5] hover:border-[#111111] hover:shadow-lg transition-all duration-300 group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]"
+                className="flex flex-col items-center text-center bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#111111] shadow-[4px_4px_0px_0px_#111111] hover:shadow-[8px_8px_0px_0px_#111111] hover:-translate-y-1 transition-all duration-300 group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]"
               >
                 {/* Icon */}
-                <div className="mb-6 text-[#555555] group-hover:text-[#111111] transition-colors">
-                  <Icon className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5]" />
+                <div className="mb-4 text-[#555555] group-hover:text-[#111111] transition-colors">
+                  <Icon className="w-8 h-8 md:w-10 md:h-10 stroke-[2]" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-ebgaramond font-bold text-[22px] md:text-[26px] leading-tight text-[#111111] mb-4">
+                <h3 className="font-ebgaramond font-bold text-[20px] md:text-[24px] leading-tight text-[#111111] mb-3">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#666666] text-sm leading-[1.65] flex-grow">
+                <p className="text-[#333333] font-medium text-sm md:text-sm leading-[1.6] flex-grow">
                   {service.description}
                 </p>
 
                 {/* Explore More Button */}
-                <button className="mt-8 flex items-center justify-center gap-2 text-sm font-semibold text-[#111111] group-hover:underline opacity-80 group-hover:opacity-100 transition-all">
-                  Explore More <ArrowRight className="w-4 h-4" />
+                <button className="mt-6 flex items-center justify-center gap-2 text-sm font-bold text-[#111111] group-hover:underline transition-all">
+                  Explore More <ArrowRight className="w-4 h-4 stroke-[2]" />
                 </button>
               </div>
             );

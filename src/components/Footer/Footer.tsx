@@ -1,4 +1,4 @@
-import { FiGithub, FiTwitter, FiInstagram, FiLinkedin, FiYoutube } from 'react-icons/fi';
+import { FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi';
 import Image from 'next/image';
 
 // ─── Shared class constants ───────────────────────────
@@ -7,7 +7,7 @@ const colHeading = 'font-ebgaramond font-medium text-2xl text-white mb-5 text-ce
 const socialLink = 'text-[#aaaaaa] hover:text-white transition-colors duration-200 bg-[#222] p-2.5 rounded-full hover:bg-[#333]';
 const legalLink = 'no-underline text-[#888] hover:text-white transition-colors text-[13px] font-medium';
 
-const SOCIAL_ICONS = [FiYoutube, FiGithub, FiInstagram, FiTwitter, FiLinkedin];
+const SOCIAL_ICONS = [FiLinkedin, FiInstagram, FiFacebook];
 
 export default function Footer() {
   return (
