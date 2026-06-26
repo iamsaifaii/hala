@@ -6,6 +6,7 @@ import {
   ChevronDown, Grid2X2, Search, MousePointerClick,
   Share2, PenTool, LayoutTemplate, BarChart3, Menu, X,
 } from 'lucide-react';
+import Link from 'next/link';
 
 // ─── Type definitions ──────────────────────────────────
 interface ServiceItem {
@@ -24,16 +25,20 @@ const SERVICES: ServiceItem[] = [
   { Icon: BarChart3, title: 'Analytics & Reporting', desc: 'Data-driven insights for continuous growth' },
 ];
 
-const SIMPLE_NAV_LINKS = ['Case Studies', 'About Us', 'Contact'];
+const SIMPLE_NAV_LINKS = [
+  { label: 'Case Studies', href: '#' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '#' }
+];
 
 // ─── Sub-components ────────────────────────────────────
 function ServiceLink({ Icon, title, desc }: ServiceItem) {
   return (
-    <a href="#" className="flex items-start gap-4 no-underline text-inherit transition-opacity duration-150 hover:opacity-60">
-      <div className="mt-[2px] text-[#333]"><Icon size={18} /></div>
+    <a href="#" className="flex items-center md:items-start gap-3 md:gap-4 no-underline text-inherit transition-opacity duration-150 hover:opacity-60">
+      <div className="mt-0 md:mt-[2px] text-[#333]"><Icon size={18} className="w-[16px] h-[16px] md:w-[18px] md:h-[18px]" /></div>
       <div>
-        <div className="text-[14.5px] font-semibold text-[#111] mb-1">{title}</div>
-        <div className="text-[13px] text-[#666] leading-[1.4]">{desc}</div>
+        <div className="text-[13.5px] md:text-[14.5px] font-semibold text-[#111] mb-0 md:mb-1">{title}</div>
+        <div className="hidden md:block text-[13px] text-[#666] leading-[1.4]">{desc}</div>
       </div>
     </a>
   );
@@ -71,7 +76,7 @@ export default function Navbar() {
   }, []);
 
   // Shared classes for navigation buttons
-  const navBtnClass = 'flex items-center gap-[3px] text-[13.5px] font-medium text-[#444] bg-transparent border-none cursor-pointer transition-[color,background] duration-150 whitespace-nowrap py-2 px-3 rounded-lg hover:text-[#111] hover:bg-[#f4f4f4] w-full md:w-auto text-left';
+  const navBtnClass = 'flex items-center justify-between md:justify-start gap-[3px] text-[13.5px] font-medium text-[#444] bg-transparent border-none cursor-pointer transition-[color,background] duration-150 whitespace-nowrap py-2.5 px-3 rounded-lg hover:text-[#111] hover:bg-[#f4f4f4] w-full md:w-auto text-left';
 
   // Shared helper for dropdown panels
   const getDropdownClass = (isOpen: boolean, isMobile: boolean) => {
@@ -98,9 +103,11 @@ export default function Navbar() {
       </li>
 
       {/* Simple links */}
-      {SIMPLE_NAV_LINKS.map(label => (
-        <li key={label} className={isMobile ? 'w-full' : ''}>
-          <button className={navBtnClass}>{label}</button>
+      {SIMPLE_NAV_LINKS.map(link => (
+        <li key={link.label} className={isMobile ? 'w-full' : ''}>
+          <Link href={link.href} className={navBtnClass} onClick={isMobile ? () => setMenuOpen(false) : undefined}>
+            {link.label}
+          </Link>
         </li>
       ))}
 
@@ -112,10 +119,10 @@ export default function Navbar() {
         </button>
         <div className={getDropdownClass(resourcesOpen, isMobile)}>
           <div className="text-[11px] font-semibold text-[#666] tracking-[0.5px] uppercase mb-[2px]">OUR RESOURCES</div>
-          <a href="#" className="flex items-start gap-4 no-underline text-inherit transition-opacity duration-150 hover:opacity-60">
+          <a href="#" className="flex items-center md:items-start gap-3 md:gap-4 no-underline text-inherit transition-opacity duration-150 hover:opacity-60">
             <div>
-              <div className="text-[14.5px] font-semibold text-[#111] mb-1">Blog</div>
-              <div className="text-[13px] text-[#666] leading-[1.4]">Latest news and articles</div>
+              <div className="text-[13.5px] md:text-[14.5px] font-semibold text-[#111] mb-0 md:mb-1">Blog</div>
+              <div className="hidden md:block text-[13px] text-[#666] leading-[1.4]">Latest news and articles</div>
             </div>
           </a>
         </div>

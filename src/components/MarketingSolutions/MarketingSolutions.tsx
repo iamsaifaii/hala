@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight, Code2, MonitorPlay, Search, Share2, PenTool, TrendingUp, Mail, MousePointerClick, Smartphone } from 'lucide-react';
+import { Code2, MonitorPlay, Search, Share2, PenTool, TrendingUp, Mail, MousePointerClick, Smartphone } from 'lucide-react';
 
 export default function MarketingSolutions() {
   const [activeTag, setActiveTag] = useState('SEO');

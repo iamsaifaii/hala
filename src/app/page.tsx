@@ -6,6 +6,8 @@ import OurServices from '@/components/OurServices/OurServices';
 import IndustriesWeCover from '@/components/IndustriesWeCover/IndustriesWeCover';
 import WhyChooseHala from '@/components/WhyChooseHala/WhyChooseHala';
 import OurJourney from '@/components/OurJourney/OurJourney';
+import OurProcess from '@/components/OurProcess/OurProcess';
+import Testimonials from '@/components/Testimonials/Testimonials';
 import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
@@ -20,6 +22,8 @@ export default function Home() {
         <IndustriesWeCover />
         <WhyChooseHala />
         <OurJourney />
+        <OurProcess />
+        <Testimonials />
       </main>
       <Footer />
     </div>
