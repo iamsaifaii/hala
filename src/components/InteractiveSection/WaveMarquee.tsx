@@ -54,7 +54,7 @@ export default function WaveMarquee() {
   const totalItems = ITEMS_PER_PERIOD * NUM_PERIODS;
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
-      <div className="absolute top-0 left-0 w-full h-full translate-y-40 md:translate-y-48">
+      <div className="absolute top-0 left-0 w-full h-full translate-y-16 md:translate-y-48">
         {Array.from({ length: totalItems }, (_, i) => (
           <IconItem key={i} index={i} initialOffset={(i / ITEMS_PER_PERIOD) * PERIOD_WIDTH} />
         ))}
