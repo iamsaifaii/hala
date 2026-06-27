@@ -2,6 +2,8 @@ import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import AboutHero from '@/components/About/AboutHero';
 import AboutSolutions from '@/components/About/AboutSolutions';
+import AboutValues from '@/components/About/AboutValues';
+import OurTeam from '@/components/About/OurTeam';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,11 +15,13 @@ export default function AboutPage() {
   return (
     <div className="font-sans bg-[#111111] text-white min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow flex flex-col bg-white">
+      <main className="flex-grow flex flex-col">
         <AboutHero />
         <AboutSolutions />
+        <AboutValues />
+        <OurTeam />
       </main>
-      <div className="bg-white w-full">
+      <div className="bg-white w-full relative z-20">
         <Footer />
       </div>
     </div>

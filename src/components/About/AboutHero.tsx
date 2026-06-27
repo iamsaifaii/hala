@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Command, Grid, ShieldCheck } from 'lucide-react';
+import { Command, Box, Grid, ShieldCheck } from 'lucide-react';
 
 export default function AboutHero() {
   const logos = [
@@ -39,8 +39,8 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="bg-[#111111] text-white w-full pt-6 md:pt-10 pb-12 relative overflow-hidden flex flex-col items-center justify-start flex-grow rounded-b-[40px] sm:rounded-b-[60px]">
-      
+    <section className="bg-[#111111] text-white w-full pt-16 md:pt-24 pb-12 relative overflow-hidden flex flex-col items-center justify-start flex-grow">
+
       {/* Main Content */}
       <div className="text-center px-4 max-w-4xl mx-auto z-10 mb-12 md:mb-16">
         <h1 className="font-poppins font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-[84px] leading-[1.05] tracking-tight mb-6 md:mb-8">
@@ -52,14 +52,14 @@ export default function AboutHero() {
         </p>
       </div>
 
-      {/* Marquee Section */}
+      {/* Main Content */}
       <div className="w-full relative flex flex-col items-center justify-center">
         <p className="font-poppins text-sm md:text-base text-[#aaaaaa] mb-10">
           Trusted by teams who put security first:
         </p>
-        
+
         <div className="w-full relative flex items-center overflow-hidden">
-          
+
           {/* Fade edges */}
           <div className="absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r from-[#111111] to-transparent z-20 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l from-[#111111] to-transparent z-20 pointer-events-none" />
