@@ -4,6 +4,8 @@ import AboutHero from '@/components/About/AboutHero';
 import AboutSolutions from '@/components/About/AboutSolutions';
 import AboutValues from '@/components/About/AboutValues';
 import OurTeam from '@/components/About/OurTeam';
+import OutroMessage from '@/components/About/OutroMessage';
+import InteractiveSection from '@/components/InteractiveSection/InteractiveSection';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,8 +20,12 @@ export default function AboutPage() {
       <main className="flex-grow flex flex-col">
         <AboutHero />
         <AboutSolutions />
+        <div className="bg-white w-full">
+          <InteractiveSection />
+        </div>
         <AboutValues />
         <OurTeam />
+        <OutroMessage />
       </main>
       <div className="bg-white w-full relative z-20">
         <Footer />
