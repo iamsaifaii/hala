@@ -1,12 +1,14 @@
+import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
 import AboutHero from '@/components/About/AboutHero';
 import AboutSolutions from '@/components/About/AboutSolutions';
-import AboutValues from '@/components/About/AboutValues';
-import OurTeam from '@/components/About/OurTeam';
-import OutroMessage from '@/components/About/OutroMessage';
-import InteractiveSection from '@/components/InteractiveSection/InteractiveSection';
-import { Metadata } from 'next';
+
+const InteractiveSection = dynamic(() => import('@/components/InteractiveSection/InteractiveSection'));
+const AboutValues = dynamic(() => import('@/components/About/AboutValues'));
+const OurTeam = dynamic(() => import('@/components/About/OurTeam'));
+const OutroMessage = dynamic(() => import('@/components/About/OutroMessage'));
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
 export const metadata: Metadata = {
   title: 'About Us | Hala Technology',

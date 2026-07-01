@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Calendar, Building2, HeartPulse, Trophy,
   GraduationCap, Thermometer, Store, Shirt,
@@ -23,7 +22,7 @@ const industries = [
 
 export default function IndustriesWeCover() {
   return (
-    <section className="bg-[#111111] rounded-b-[40px] md:rounded-b-[60px] py-12 md:py-16 w-full relative overflow-hidden border-t border-[#222]">
+    <section className="bg-[#111111] rounded-[40px] md:rounded-[60px] py-12 md:py-16 w-full relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto flex flex-col items-center">
 
         {/* Title */}

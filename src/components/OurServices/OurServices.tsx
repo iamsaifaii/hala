@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Search, Code2, MonitorPlay, PenTool,
   Video, ArrowRight, FileText
@@ -39,14 +38,14 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 md:py-20 lg:py-24 relative">
+    <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 md:py-20 lg:py-24 relative rounded-t-[40px] md:rounded-t-[60px]">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Top Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-24">
 
           {/* Pill */}
-          <div className="bg-[#111111] text-white px-5 py-2 rounded-full text-sm font-semibold mb-8 shadow-sm">
+          <div className="bg-[#007FFF] text-white px-5 py-2 rounded-full text-sm font-semibold mb-8 shadow-sm">
             Our Services
           </div>
 
@@ -72,7 +71,7 @@ export default function OurServices() {
                 className="flex flex-col items-center text-center bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#111111] shadow-[4px_4px_0px_0px_#111111] hover:shadow-[8px_8px_0px_0px_#111111] hover:-translate-y-1 transition-all duration-300 group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]"
               >
                 {/* Icon */}
-                <div className="mb-4 text-[#555555] group-hover:text-[#111111] transition-colors">
+                <div className="mb-4 text-[#007FFF] transition-colors">
                   <Icon className="w-8 h-8 md:w-10 md:h-10 stroke-[2]" />
                 </div>
 

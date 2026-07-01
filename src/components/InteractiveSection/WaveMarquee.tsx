@@ -19,7 +19,7 @@ const TOTAL_WIDTH = PERIOD_WIDTH * NUM_PERIODS;
 const MIN_X = -300;
 const TWO_PI = 2 * Math.PI;
 
-function IconItem({ index, initialOffset }: { index: number; initialOffset: number }) {
+function IconItem({ index, initialOffset, amplitude }: { index: number; initialOffset: number; amplitude: number }) {
   const time = useTime();
   const { component: Icon, color } = icons[index % icons.length];
   const isTwitter = Icon === FaXTwitter;
@@ -29,9 +29,9 @@ function IconItem({ index, initialOffset }: { index: number; initialOffset: numb
     return ((currentX - MIN_X) % TOTAL_WIDTH + TOTAL_WIDTH) % TOTAL_WIDTH + MIN_X;
   });
 
-  const y = useTransform(x, (cx) => Math.sin((cx / PERIOD_WIDTH) * TWO_PI) * AMPLITUDE);
+  const y = useTransform(x, (cx) => Math.sin((cx / PERIOD_WIDTH) * TWO_PI) * amplitude);
   const rotation = useTransform(x, (cx) => {
-    const d = Math.cos((cx / PERIOD_WIDTH) * TWO_PI) * AMPLITUDE * (TWO_PI / PERIOD_WIDTH);
+    const d = Math.cos((cx / PERIOD_WIDTH) * TWO_PI) * amplitude * (TWO_PI / PERIOD_WIDTH);
     return Math.atan(d) * (180 / Math.PI);
   });
 
@@ -54,11 +54,21 @@ export default function WaveMarquee() {
   const totalItems = ITEMS_PER_PERIOD * NUM_PERIODS;
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
-      <div className="absolute top-0 left-0 w-full h-full translate-y-16 md:translate-y-48">
+      
+      {/* Mobile Marquee (Straight Line) */}
+      <div className="absolute top-0 left-0 w-full h-full translate-y-[140px] md:hidden">
         {Array.from({ length: totalItems }, (_, i) => (
-          <IconItem key={i} index={i} initialOffset={(i / ITEMS_PER_PERIOD) * PERIOD_WIDTH} />
+          <IconItem key={`mobile-${i}`} index={i} initialOffset={(i / ITEMS_PER_PERIOD) * PERIOD_WIDTH} amplitude={0} />
         ))}
       </div>
+
+      {/* Desktop Marquee (Wavy Line) */}
+      <div className="hidden md:block absolute top-0 left-0 w-full h-full translate-y-48">
+        {Array.from({ length: totalItems }, (_, i) => (
+          <IconItem key={`desktop-${i}`} index={i} initialOffset={(i / ITEMS_PER_PERIOD) * PERIOD_WIDTH} amplitude={120} />
+        ))}
+      </div>
+
     </div>
   );
 }

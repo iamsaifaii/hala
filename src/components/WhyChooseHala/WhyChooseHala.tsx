@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Users, Headset } from 'lucide-react';
 
 export default function WhyChooseHala() {
@@ -9,7 +8,7 @@ export default function WhyChooseHala() {
   ];
 
   return (
-    <section className="bg-white w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 flex justify-center">
+    <section className="bg-white w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 flex justify-center rounded-[40px] md:rounded-[60px]">
       <div className="max-w-[1000px] w-full bg-white rounded-[32px] border-2 border-[#111111] p-8 md:p-14 lg:p-16 relative shadow-[8px_8px_0px_0px_#111111] md:shadow-[12px_12px_0px_0px_#111111]">
         
         {/* Content Container */}
@@ -32,10 +31,10 @@ export default function WhyChooseHala() {
               return (
                 <div 
                   key={index}
-                  className="flex items-center gap-3 bg-[#fafafa] border border-[#111111] rounded-full px-6 py-3 shadow-[2px_2px_0px_0px_#111111] hover:shadow-[4px_4px_0px_0px_#111111] hover:-translate-y-0.5 transition-all cursor-default"
+                  className="flex items-center gap-3 bg-[#007FFF] border border-[#007FFF] rounded-full px-6 py-3 shadow-[2px_2px_0px_0px_#111111] hover:shadow-[4px_4px_0px_0px_#111111] hover:-translate-y-0.5 transition-all cursor-default"
                 >
-                  <Icon className="w-5 h-5 text-[#111111] stroke-[2]" />
-                  <span className="font-poppins font-semibold text-[#111111] text-sm md:text-base whitespace-nowrap">
+                  <Icon className="w-5 h-5 text-white stroke-[2]" />
+                  <span className="font-poppins font-semibold text-white text-sm md:text-base whitespace-nowrap">
                     {reason.title}
                   </span>
                 </div>

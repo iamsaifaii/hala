@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 
 export default function Testimonials() {
   const testimonials = [
@@ -102,7 +101,7 @@ function TestimonialCard({ quote, name, title, hasButton, initials }: any) {
     <div className="bg-white text-[#111111] rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 w-[240px] sm:w-[280px] md:w-[320px] flex flex-col items-center text-center shrink-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(255,255,255,0.08)] cursor-grab active:cursor-grabbing relative overflow-hidden">
       
       {/* Avatar */}
-      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#111111] text-white rounded-full flex items-center justify-center font-bold text-[11px] sm:text-sm md:text-base font-poppins mb-4 sm:mb-5 shadow-md">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#007FFF] text-white rounded-full flex items-center justify-center font-bold text-[11px] sm:text-sm md:text-base font-poppins mb-4 sm:mb-5 shadow-md shadow-[#007FFF]/20">
         {initials}
       </div>
 

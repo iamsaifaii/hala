@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { Code2, MonitorPlay, Search, Share2, PenTool, TrendingUp, Mail, MousePointerClick, Smartphone } from 'lucide-react';
 
@@ -19,7 +19,7 @@ export default function MarketingSolutions() {
   ];
 
   return (
-    <section className="font-poppins w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16 lg:py-24 relative overflow-hidden rounded-[40px] md:rounded-[60px] mt-8 md:mt-12">
+    <section className="font-poppins w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16 lg:py-24 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px] z-20">
 
       {/* Background decorative elements (subtle grain/texture would go here in prod) */}
       <div className="absolute top-0 right-0 w-full h-24 bg-gradient-to-b from-[#f8f6ed] to-transparent opacity-[0.03]"></div>
@@ -82,7 +82,7 @@ export default function MarketingSolutions() {
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
               At Hala Smart Technologies, we specialize in delivering digital marketing services to help your business grow and stand out in today's competitive market. From result-driven SEO services and high-performing PPC campaigns to creative content marketing and strategic social media management, we cover all aspects of online growth.
             </p>
-            <button className="flex items-center justify-center gap-3 w-full sm:w-auto bg-white text-black font-bold py-3.5 md:py-4 px-6 md:px-8 rounded-xl hover:bg-zinc-200 transition-colors self-start shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            <button className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#007FFF] text-white font-bold py-3.5 md:py-4 px-6 md:px-8 rounded-xl hover:bg-[#0066CC] transition-colors self-start shadow-[0_0_20px_rgba(0,127,255,0.2)]">
               <Search className="w-5 h-5" />
               Get a Free Audit
             </button>

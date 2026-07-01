@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -21,11 +20,11 @@ export default function OutroMessage() {
           </p>
 
           {/* Contact Button */}
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-[#fafafa] border border-[#111111] rounded-full px-8 py-4 shadow-[2px_2px_0px_0px_#111111] hover:shadow-[4px_4px_0px_0px_#111111] hover:-translate-y-0.5 transition-all">
-            <span className="font-poppins font-bold text-[#111111] text-base md:text-lg">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-[#007FFF] border border-[#007FFF] rounded-full px-8 py-4 shadow-[2px_2px_0px_0px_#111111] hover:shadow-[4px_4px_0px_0px_#111111] hover:-translate-y-0.5 transition-all">
+            <span className="font-poppins font-bold text-white text-base md:text-lg">
               Contact Us
             </span>
-            <ArrowRight className="w-5 h-5 text-[#111111] stroke-[2.5]" />
+            <ArrowRight className="w-5 h-5 text-white stroke-[2.5]" />
           </Link>
 
         </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   Hexagon, Triangle, Box, Command, 
   Aperture, Activity, Globe, Layers

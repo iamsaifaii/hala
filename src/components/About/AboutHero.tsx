@@ -1,6 +1,5 @@
 'use client';
-import React from 'react';
-import { Command, Box, Grid, ShieldCheck } from 'lucide-react';
+import { Command, Grid, ShieldCheck } from 'lucide-react';
 
 export default function AboutHero() {
   const logos = [

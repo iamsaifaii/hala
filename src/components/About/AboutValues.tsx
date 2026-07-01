@@ -1,6 +1,6 @@
 'use client';
+import { useRef } from 'react';
 
-import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const cards = [
@@ -9,7 +9,7 @@ const cards = [
     heading: 'Our Vision',
     body: 'Our vision is to become one of the most trusted and result-oriented digital solution companies in Dubai. Therefore, we are committed to continuous innovation, steady expansion of our capabilities, and the delivery of world-class services that ultimately empower businesses to lead their industry.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007FFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
         <circle cx="12" cy="12" r="3" />
       </svg>
@@ -20,7 +20,7 @@ const cards = [
     heading: 'Our Mission',
     body: 'Our mission is to empower brands with cutting-edge digital solutions that drive measurable success. To achieve this, we seamlessly combine creativity, advanced technology, and data-driven strategies to ensure continuous growth and long-term value for our clients.',
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007FFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
         <path d="M2 17l10 5 10-5" />
         <path d="M2 12l10 5 10-5" />

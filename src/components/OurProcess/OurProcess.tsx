@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 
@@ -47,7 +47,7 @@ export default function OurProcess() {
   ];
 
   return (
-    <div className="w-full bg-white text-[#111111] font-poppins antialiased overflow-x-hidden flex flex-col items-center justify-center px-4 md:px-8 select-none relative py-12 sm:py-16 md:py-24">
+    <div className="w-full bg-white text-[#111111] font-poppins antialiased overflow-x-hidden flex flex-col items-center justify-center px-4 md:px-8 select-none relative py-12 sm:py-16 md:py-24 rounded-[40px] md:rounded-[60px]">
       
       <header className="w-full max-w-5xl text-center z-10 space-y-3 sm:space-y-4 mb-6 sm:mb-8 md:mb-12">
         <p className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.4em] text-[#888888] font-poppins uppercase font-semibold">

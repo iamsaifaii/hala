@@ -11,7 +11,7 @@ const SOCIAL_ICONS = [FiLinkedin, FiInstagram, FiFacebook];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-white flex flex-col rounded-t-[60px] w-full mt-10 px-6 pt-12 pb-6 sm:px-10 sm:pt-14 sm:pb-8 md:px-16 md:pt-16 md:pb-8 border-t border-[#222]">
+    <footer className="bg-[#111111] text-white flex flex-col rounded-t-[60px] w-full px-6 pt-12 pb-6 sm:px-10 sm:pt-14 sm:pb-8 md:px-16 md:pt-16 md:pb-8 border-t border-[#222]">
 
       {/* ── Top section: Links & Contact ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-[1100px] w-full mx-auto mb-12 md:mb-16">
