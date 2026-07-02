@@ -2,7 +2,9 @@ import BrandingHeroSection from '@/components/branding/BrandingHeroSection';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
-const BeforeAfterSlider = dynamic(() => import('@/components/branding/BeforeAfterSlider/BeforeAfterSlider'));
+const BrandingShowcase = dynamic(() => import('@/components/branding/BrandingShowcase'));
+const BrandingServices = dynamic(() => import('@/components/branding/BrandingServices'));
+const BrandingExpertise = dynamic(() => import('@/components/branding/BrandingExpertise'));
 
 export const metadata: Metadata = {
   title: 'Branding | Hala Technologies',
@@ -14,13 +16,14 @@ export default function BrandingPage() {
     <div className="w-full">
       <BrandingHeroSection />
       
-      {/* Before & After Image Slider Section */}
-      <BeforeAfterSlider 
-        beforeImage="/3.png" 
-        afterImage="/3.png" 
-      />
+      {/* Branding Showcase Section */}
+      <BrandingShowcase />
       
-      {/* Additional branding sections will go here */}
+      {/* Branding Services Section */}
+      <BrandingServices />
+      
+      {/* Branding Expertise Section */}
+      <BrandingExpertise />
     </div>
   );
 }

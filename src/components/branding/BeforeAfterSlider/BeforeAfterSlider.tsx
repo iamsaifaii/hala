@@ -42,17 +42,10 @@ export default function BeforeAfterSlider({ beforeImage, afterImage }: BeforeAft
   }, [isDragging]);
 
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28 flex flex-col items-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-[#111] mb-4 text-center">
-        Transform Your Brand
-      </h2>
-      <p className="text-[#555] text-base md:text-lg mb-12 text-center max-w-2xl font-medium">
-        Slide to see the difference a premium brand identity can make for your business.
-      </p>
-
+    <section className="w-full">
       <div 
         ref={containerRef}
-        className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-ew-resize bg-gray-100 select-none touch-none"
+        className="relative w-full h-[50vh] md:h-[80vh] overflow-hidden cursor-ew-resize bg-gray-100 select-none touch-none"
         onPointerDown={(e) => {
           setIsDragging(true);
           handlePointerMove(e);
