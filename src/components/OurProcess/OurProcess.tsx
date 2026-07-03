@@ -1,10 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 
 export default function OurProcess() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
+
+  const closeModal = useCallback(() => setActiveStep(null), []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (activeStep !== null) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [activeStep, closeModal]);
 
   // Content mapped exactly from your prompt & image_2ae7d1.png
   const steps = [
@@ -150,7 +162,8 @@ export default function OurProcess() {
               </h3>
             </div>
             <button 
-              onClick={() => setActiveStep(null)}
+              onClick={closeModal}
+              aria-label="Close step details"
               className="p-1.5 hover:bg-[#f5f5f5] rounded-full text-[#555555] hover:text-[#111111] transition-colors cursor-pointer border border-transparent hover:border-[#111111]/20 -mr-2 -mt-2"
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" />

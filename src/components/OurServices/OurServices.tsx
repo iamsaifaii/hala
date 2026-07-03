@@ -2,41 +2,52 @@ import {
   Search, Code2, MonitorPlay, PenTool,
   Video, ArrowRight, FileText
 } from 'lucide-react';
+import Link from 'next/link';
+import type { ElementType } from 'react';
+
+// ─── Types ────────────────────────────────────────────
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: ElementType;
+  href?: string;
+}
+
+const services: ServiceItem[] = [
+  {
+    title: 'Digital Marketing',
+    description: 'Are you struggling to reach your target audience or convert clicks into customers? At Hala Smart Technologies, we provide professional digital marketing services in Dubai that help businesses grow smarter and faster. From SEO to PPC, social media marketing to content strategies, our experts use proven methods to increase visibility, drive qualified leads, and maximize ROI.',
+    icon: MonitorPlay,
+  },
+  {
+    title: 'Search Engine Optimization',
+    description: 'Looking for professional SEO services in Dubai that help your business stand out online? At Hala Smart Technology, we specialize in delivering data-driven, innovative, and strategic SEO solutions that not only improve rankings but also drive real results. Whether you need keyword research, on-page optimization, technical SEO or complete search engine optimization management, our team is here to turn your website into a powerful lead generating platform.',
+    icon: Search,
+  },
+  {
+    title: 'Web Development',
+    description: 'Looking for professional web development services in Dubai that deliver results? At Hala Smart Technologies, we design and develop websites that don\'t just look good they perform, convert, and scale with your business. From custom websites to eCommerce Platforms, our expert developers combine creativity, strategy, and the latest technology to give your brand a strong online presence.',
+    icon: Code2,
+  },
+  {
+    title: 'Graphic Designing',
+    description: 'Looking for professional graphic design services in Dubai that make your business stand out? At Hala Smart Technologies, we specialize in delivering eye-catching, innovative, and strategic designs that not only look stunning but also convert. Whether you need logo design, social media graphics, marketing materials, or complete brand identity design, our team is here to turn your ideas into impactful visuals.',
+    icon: PenTool,
+    href: '/branding/graphic-design',
+  },
+  {
+    title: 'Video Editing',
+    description: 'Looking for professional video editing services in Dubai that bring your stories to life? At Hala Smart Technologies, we specialize in transforming your raw footage into polished, engaging, and impactful videos. Whether it\'s for social media, corporate presentations, ads, or events, our expert editors use creativity and the latest tools to deliver videos that truly stand out.',
+    icon: Video,
+  },
+  {
+    title: 'Content Creation',
+    description: 'Struggling to create content that grabs attention and drives results? At Hala Smart Technologies, we provide professional content creation services in Dubai designed to help businesses communicate their brand story effectively. From website content to social media posts, blogs to video scripts, our creative team ensures your content not only looks great but also performs.',
+    icon: FileText,
+  }
+];
 
 export default function OurServices() {
-  const services = [
-    {
-      title: 'Digital Marketing',
-      description: 'Are you struggling to reach your target audience or convert clicks into customers? At Hala Smart Technologies, we provide professional digital marketing services in Dubai that help businesses grow smarter and faster. From SEO to PPC, social media marketing to content strategies, our experts use proven methods to increase visibility, drive qualified leads, and maximize ROI.',
-      icon: MonitorPlay,
-    },
-    {
-      title: 'Search Engine Optimization',
-      description: 'Looking for professional SEO services in Dubai that help your business stand out online? At Hala Smart Technology, we specialize in delivering data-driven, innovative, and strategic SEO solutions that not only improve rankings but also drive real results. Whether you need keyword research, on-page optimization, technical SEO or complete search engine optimization management, our team is here to turn your website into a powerful lead generating platform.',
-      icon: Search,
-    },
-    {
-      title: 'Web Development',
-      description: 'Looking for professional web development services in Dubai that deliver results? At Hala Smart Technologies, we design and develop websites that don’t just look good they perform, convert, and scale with your business. From custom websites to eCommerce Platforms, our expert developers combine creativity, strategy, and the latest technology to give your brand a strong online presence.',
-      icon: Code2,
-    },
-    {
-      title: 'Graphic Designing',
-      description: 'Looking for professional graphic design services in Dubai that make your business stand out? At Hala Smart Technologies, we specialize in delivering eye-catching, innovative, and strategic designs that not only look stunning but also convert. Whether you need logo design, social media graphics, marketing materials, or complete brand identity design, our team is here to turn your ideas into impactful visuals.',
-      icon: PenTool,
-    },
-    {
-      title: 'Video Editing',
-      description: 'Looking for professional video editing services in Dubai that bring your stories to life? At Hala Smart Technologies, we specialize in transforming your raw footage into polished, engaging, and impactful videos. Whether it’s for social media, corporate presentations, ads, or events, our expert editors use creativity and the latest tools to deliver videos that truly stand out.',
-      icon: Video,
-    },
-    {
-      title: 'Content Creation',
-      description: 'Struggling to create content that grabs attention and drives results? At Hala Smart Technologies, we provide professional content creation services in Dubai designed to help businesses communicate their brand story effectively. From website content to social media posts, blogs to video scripts, our creative team ensures your content not only looks great but also performs.',
-      icon: FileText,
-    }
-  ];
-
   return (
     <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 md:py-20 lg:py-24 relative rounded-t-[40px] md:rounded-t-[60px]">
       <div className="max-w-[1400px] mx-auto">
@@ -86,9 +97,15 @@ export default function OurServices() {
                 </p>
 
                 {/* Explore More Button */}
-                <button className="mt-6 flex items-center justify-center gap-2 text-sm font-bold text-[#111111] group-hover:underline transition-all">
-                  Explore More <ArrowRight className="w-4 h-4 stroke-[2]" />
-                </button>
+                {service.href ? (
+                  <Link href={service.href} className="mt-6 flex items-center justify-center gap-2 text-sm font-bold text-[#111111] group-hover:underline transition-all">
+                    Explore More <ArrowRight className="w-4 h-4 stroke-[2]" />
+                  </Link>
+                ) : (
+                  <button className="mt-6 flex items-center justify-center gap-2 text-sm font-bold text-[#111111] group-hover:underline transition-all">
+                    Explore More <ArrowRight className="w-4 h-4 stroke-[2]" />
+                  </button>
+                )}
               </div>
             );
           })}

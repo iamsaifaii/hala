@@ -7,7 +7,11 @@ const colHeading = 'font-ebgaramond font-medium text-2xl text-white mb-5 text-ce
 const socialLink = 'text-[#aaaaaa] hover:text-white transition-colors duration-200 bg-[#222] p-2.5 rounded-full hover:bg-[#333]';
 const legalLink = 'no-underline text-[#888] hover:text-white transition-colors text-[13px] font-medium';
 
-const SOCIAL_ICONS = [FiLinkedin, FiInstagram, FiFacebook];
+const SOCIAL_LINKS = [
+  { Icon: FiLinkedin, label: 'LinkedIn', href: '#' },
+  { Icon: FiInstagram, label: 'Instagram', href: '#' },
+  { Icon: FiFacebook, label: 'Facebook', href: '#' },
+];
 
 export default function Footer() {
   return (
@@ -82,8 +86,8 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex gap-3 justify-center">
-          {SOCIAL_ICONS.map((Icon, i) => (
-            <a key={i} href="#" className={socialLink}>
+          {SOCIAL_LINKS.map(({ Icon, label, href }) => (
+            <a key={label} href={href} aria-label={`Follow us on ${label}`} className={socialLink}>
               <Icon size={18} />
             </a>
           ))}

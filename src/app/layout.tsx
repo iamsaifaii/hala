@@ -15,9 +15,41 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+const BASE_URL = 'https://halatechnologies.com';
+
 export const metadata: Metadata = {
-  title: 'Hala Technologies – Scale Your Brand, Dominate the Market',
-  description: 'Hala Technologies is a digital marketing agency that turns clicks into customers. SEO, PPC, Social Media, Content Marketing & Web Development.',
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: 'Hala Technologies – Scale Your Brand, Dominate the Market',
+    template: '%s | Hala Technologies',
+  },
+  description:
+    'Hala Technologies is a digital marketing agency that turns clicks into customers. SEO, PPC, Social Media, Content Marketing & Web Development.',
+  keywords: ['digital marketing', 'SEO', 'web development', 'branding', 'Dubai', 'UAE'],
+  authors: [{ name: 'Hala Technologies' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_AE',
+    url: BASE_URL,
+    siteName: 'Hala Technologies',
+    title: 'Hala Technologies – Scale Your Brand, Dominate the Market',
+    description:
+      'Hala Technologies is a digital marketing agency that turns clicks into customers. SEO, PPC, Social Media, Content Marketing & Web Development.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hala Technologies – Scale Your Brand, Dominate the Market',
+    description:
+      'Hala Technologies is a digital marketing agency that turns clicks into customers. SEO, PPC, Social Media, Content Marketing & Web Development.',
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
 };
 
 export default function RootLayout({
@@ -27,14 +59,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );

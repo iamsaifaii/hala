@@ -5,10 +5,30 @@ import { Metadata } from 'next';
 const BrandingShowcase = dynamic(() => import('@/components/branding/BrandingShowcase'));
 const BrandingServices = dynamic(() => import('@/components/branding/BrandingServices'));
 const BrandingExpertise = dynamic(() => import('@/components/branding/BrandingExpertise'));
+const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const BrandingFAQ = dynamic(() => import('@/components/branding/BrandingFAQ'));
+const BrandingBlogs = dynamic(() => import('@/components/branding/BrandingBlogs'));
+const OutroMessage = dynamic(() => import('@/components/About/OutroMessage'));
 
 export const metadata: Metadata = {
   title: 'Branding | Hala Technologies',
-  description: 'Build a memorable brand with custom logos, brand identity, and strategy that help your business stand out and grow.',
+  description:
+    'Build a memorable brand with custom logos, brand identity, and strategy that help your business stand out and grow.',
+  openGraph: {
+    title: 'Branding | Hala Technologies',
+    description:
+      'Build a memorable brand with custom logos, brand identity, and strategy that help your business stand out and grow.',
+    url: 'https://halatechnologies.com/branding',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Branding | Hala Technologies',
+    description:
+      'Build a memorable brand with custom logos, brand identity, and strategy that help your business stand out and grow.',
+  },
+  alternates: {
+    canonical: 'https://halatechnologies.com/branding',
+  },
 };
 
 export default function BrandingPage() {
@@ -24,6 +44,18 @@ export default function BrandingPage() {
       
       {/* Branding Expertise Section */}
       <BrandingExpertise />
+      
+      {/* Testimonials Section */}
+      <Testimonials straightBottomCorners={true} />
+
+      {/* FAQ Section */}
+      <BrandingFAQ />
+
+      {/* Blogs Section */}
+      <BrandingBlogs />
+
+      {/* Outro Message */}
+      <OutroMessage />
     </div>
   );
 }

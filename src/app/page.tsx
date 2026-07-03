@@ -14,7 +14,23 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
 export const metadata: Metadata = {
   title: 'Hala Technology | Digital Marketing & Web Development',
-  description: 'Scale your brand and dominate the market with Hala Technology. The digital marketing agency that turns clicks into customers with SEO, PPC, and Web Development.',
+  description:
+    'Scale your brand and dominate the market with Hala Technology. The digital marketing agency that turns clicks into customers with SEO, PPC, and Web Development.',
+  openGraph: {
+    title: 'Hala Technology | Digital Marketing & Web Development',
+    description:
+      'Scale your brand and dominate the market with Hala Technology. The digital marketing agency that turns clicks into customers with SEO, PPC, and Web Development.',
+    url: 'https://halatechnologies.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hala Technology | Digital Marketing & Web Development',
+    description:
+      'Scale your brand and dominate the market with Hala Technology. The digital marketing agency that turns clicks into customers with SEO, PPC, and Web Development.',
+  },
+  alternates: {
+    canonical: 'https://halatechnologies.com',
+  },
 };
 export default function Home() {
   return (

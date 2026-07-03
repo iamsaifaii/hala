@@ -1,6 +1,14 @@
 'use client';
 
-export default function Testimonials() {
+interface TestimonialCardProps {
+  quote: string;
+  name: string;
+  title: string;
+  hasButton: boolean;
+  initials: string;
+}
+
+export default function Testimonials({ straightBottomCorners = false }: { straightBottomCorners?: boolean } = {}) {
   const testimonials = [
     {
       id: 1,
@@ -61,8 +69,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-[#111111] text-white w-full py-20 md:py-32 relative overflow-hidden flex flex-col items-center rounded-[40px] sm:rounded-[60px]">
-      
+    <section className={`bg-[#111111] text-white w-full py-20 md:py-32 relative overflow-hidden flex flex-col items-center rounded-t-[40px] sm:rounded-t-[60px] ${straightBottomCorners ? 'rounded-b-none' : 'rounded-b-[40px] sm:rounded-b-[60px]'}`}>
+
       {/* Title Area */}
       <div className="relative text-center mb-20 md:mb-28 z-10 w-full flex flex-col items-center justify-center">
         <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.1] tracking-tight relative z-10 px-4 text-center">
@@ -73,7 +81,7 @@ export default function Testimonials() {
 
       {/* Marquee Wrapper */}
       <div className="w-full relative flex items-end overflow-hidden pb-4">
-        
+
         {/* Fade edges removed */}
 
         {/* Track 1 */}
@@ -96,10 +104,10 @@ export default function Testimonials() {
   );
 }
 
-function TestimonialCard({ quote, name, title, hasButton, initials }: any) {
+function TestimonialCard({ quote, name, title, hasButton, initials }: TestimonialCardProps) {
   return (
     <div className="bg-white text-[#111111] rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 w-[240px] sm:w-[280px] md:w-[320px] flex flex-col items-center text-center shrink-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(255,255,255,0.08)] cursor-grab active:cursor-grabbing relative overflow-hidden">
-      
+
       {/* Avatar */}
       <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#007FFF] text-white rounded-full flex items-center justify-center font-bold text-[11px] sm:text-sm md:text-base font-poppins mb-4 sm:mb-5 shadow-md shadow-[#007FFF]/20">
         {initials}
@@ -112,7 +120,7 @@ function TestimonialCard({ quote, name, title, hasButton, initials }: any) {
 
       {/* Details Area */}
       <div className="mt-auto flex flex-col items-center space-y-2 sm:space-y-3 w-full">
-        
+
         {/* Name & Title */}
         <div className="space-y-0.5 sm:space-y-1">
           <h4 className="font-poppins text-[10px] sm:text-[11px] md:text-xs font-bold text-[#111111] tracking-wide uppercase">

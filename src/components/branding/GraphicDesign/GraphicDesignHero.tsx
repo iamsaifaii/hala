@@ -1,0 +1,78 @@
+'use client';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Grid2X2 } from 'lucide-react';
+import GraphicDesignWaveMarquee from './GraphicDesignWaveMarquee';
+
+export default function GraphicDesignHero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <div className="relative w-full bg-[#111111] text-[#F3F0E6] overflow-x-hidden antialiased selection:bg-[#EADCF8] selection:text-[#111] -mt-[100px] rounded-b-[40px]">
+
+      {/* Hero Section */}
+      <section className="relative w-full flex flex-col items-center justify-center px-6 z-10 overflow-hidden pt-[130px] pb-[150px] md:pt-[160px] md:pb-[180px]">
+
+        {/* Background Image Setup */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/grphics.png"
+            alt="Graphic Design Hero Background"
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            className="opacity-90 blur-[2px] scale-105"
+            priority
+            quality={90}
+          />
+          {/* Black overlays for high contrast and black-and-white design system */}
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-[#111111]"></div>
+        </div>
+
+        {/* Wavy Logo Marquee */}
+        {mounted && <GraphicDesignWaveMarquee />}
+
+        {/* Hero Content */}
+        <div className="relative z-20 text-center max-w-4xl flex flex-col items-center">
+          <h1 className="font-poppins text-5xl md:text-7xl lg:text-[85px] font-semibold leading-[1.05] tracking-tight mb-6 text-white drop-shadow-xl">
+            Graphic Design that
+            <em className="eb-garamond font-semibold italic"> makes you stand out.</em>
+          </h1>
+
+          <p className="font-poppins text-base md:text-lg lg:text-xl mb-10 max-w-[600px] mx-auto font-medium text-white/90 leading-relaxed">
+            Communicate your brand's unique message through stunning, purposeful, and strategic visual design.
+          </p>
+
+          <button className="flex items-center justify-center gap-2 bg-white hover:bg-[#f4f4f4] transition-colors duration-300 text-[#1A1523] font-poppins font-semibold text-[14px] md:text-[15px] px-8 py-3.5 rounded-md shadow-lg shadow-black/20">
+            <Grid2X2 size={18} />
+            Let's Talk Design
+          </button>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="relative bg-[#111111] z-10 pt-10 pb-24 md:pt-16 md:pb-32 px-6 flex flex-col items-center">
+        {/* Centered container for perfect alignment */}
+        <div className="max-w-[900px] text-center relative z-30">
+
+          <p className="font-poppins text-xl md:text-2xl lg:text-3xl leading-[1.6] md:leading-[1.7] mb-10 md:mb-14 text-[#E8E6E1]">
+            At Hala Technologies, we believe graphic design is more than just making things look good. It's about translating your brand's core identity into visual experiences that captivate, communicate, and convert.
+          </p>
+
+          <p className="font-poppins text-lg md:text-xl lg:text-2xl leading-[1.6] mb-12 md:mb-16 text-[#E8E6E1]/80">
+            From impactful marketing materials to complete visual identities, we create designs that seamlessly bridge the gap between your brand and your audience.
+          </p>
+
+          <button className="bg-[#222222] hover:bg-[#333333] transition-colors duration-300 text-white font-poppins font-semibold text-[14px] md:text-[15px] px-8 py-4 rounded-md shadow-md border border-[#333333]">
+            Explore Our Designs
+          </button>
+
+        </div>
+      </section>
+    </div>
+  );
+}
