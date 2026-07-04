@@ -136,14 +136,14 @@ export default function GraphicDesignWaveMarquee() {
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
       
       {/* Mobile Marquee */}
-      <div className="absolute md:hidden w-full min-w-[800px] left-1/2 -translate-x-1/2 h-[220px] bottom-4">
+      <div className="absolute md:hidden w-full min-w-[800px] left-1/2 -translate-x-1/2 h-[220px] -bottom-4">
         {Array.from({ length: NUM_MOBILE_ITEMS }, (_, i) => (
           <IconItemMobile key={`mobile-${i}`} index={i} initialOffset={i * (1000 / NUM_MOBILE_ITEMS)} />
         ))}
       </div>
 
       {/* Desktop Marquee */}
-      <div className="hidden md:block absolute w-full min-w-[1440px] left-1/2 -translate-x-1/2 h-[300px] bottom-4">
+      <div className="hidden md:block absolute w-full min-w-[1440px] left-1/2 -translate-x-1/2 h-[300px] -bottom-8">
         {Array.from({ length: NUM_DESKTOP_ITEMS }, (_, i) => (
           <IconItemDesktop key={`desktop-${i}`} index={i} initialOffset={i * (1840 / NUM_DESKTOP_ITEMS)} />
         ))}

@@ -12,10 +12,10 @@ export default function GraphicDesignHero() {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#111111] text-[#F3F0E6] overflow-x-hidden antialiased selection:bg-[#EADCF8] selection:text-[#111] -mt-[100px] rounded-b-[40px]">
+    <div className="relative w-full bg-[#111111] text-[#F3F0E6] overflow-x-hidden antialiased selection:bg-[#EADCF8] selection:text-[#111] rounded-b-[40px]">
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center px-6 z-10 overflow-hidden pt-[130px] pb-[150px] md:pt-[160px] md:pb-[180px]">
+      <section className="relative w-full h-[100vh] flex flex-col items-center justify-center px-6 z-10 overflow-hidden pt-[100px]">
 
         {/* Background Image Setup */}
         <div className="absolute inset-0 z-0">
@@ -37,7 +37,7 @@ export default function GraphicDesignHero() {
         {mounted && <GraphicDesignWaveMarquee />}
 
         {/* Hero Content */}
-        <div className="relative z-20 text-center max-w-4xl flex flex-col items-center">
+        <div className="relative z-20 text-center max-w-4xl flex flex-col items-center -mt-16 md:-mt-24">
           <h1 className="font-poppins text-5xl md:text-7xl lg:text-[85px] font-semibold leading-[1.05] tracking-tight mb-6 text-white drop-shadow-xl">
             Graphic Design that
             <em className="eb-garamond font-semibold italic"> makes you stand out.</em>

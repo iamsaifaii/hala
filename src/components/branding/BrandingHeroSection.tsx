@@ -12,10 +12,10 @@ export default function BrandingHeroSection() {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#111111] text-[#F3F0E6] overflow-x-hidden antialiased selection:bg-[#EADCF8] selection:text-[#111] -mt-[100px] rounded-b-[40px]">
+    <div className="relative w-full bg-[#111111] text-[#F3F0E6] overflow-x-hidden antialiased selection:bg-[#EADCF8] selection:text-[#111] rounded-b-[40px]">
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center px-6 z-10 overflow-hidden pt-[160px] pb-[120px] md:pt-[200px] md:pb-[140px]">
+      <section className="relative w-full h-[100vh] flex flex-col items-center justify-center px-6 z-10 overflow-hidden pt-[100px]">
 
         {/* Background Image Setup */}
         <div className="absolute inset-0 z-0">

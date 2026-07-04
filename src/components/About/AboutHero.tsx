@@ -61,7 +61,7 @@ function renderLogo(logo: LogoItem) {
 
 export default function AboutHero() {
   return (
-    <section className="bg-[#111111] text-white w-full pt-16 md:pt-24 pb-12 relative overflow-hidden flex flex-col items-center justify-start flex-grow">
+    <section className="bg-[#111111] text-white w-full h-[100vh] relative overflow-hidden flex flex-col items-center justify-center pt-[100px]">
 
       {/* Main Content */}
       <div className="text-center px-4 max-w-4xl mx-auto z-10 mb-12 md:mb-16">

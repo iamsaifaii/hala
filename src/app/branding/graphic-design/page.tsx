@@ -1,5 +1,6 @@
 import GraphicDesignHero from '@/components/branding/GraphicDesign/GraphicDesignHero';
 import GraphicDesignServices from '@/components/branding/GraphicDesign/GraphicDesignServices';
+import GraphicDesignShowcase from '@/components/branding/GraphicDesign/GraphicDesignShowcase';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
@@ -33,6 +34,7 @@ export default function GraphicDesignPage() {
   return (
     <div className="w-full">
       <GraphicDesignHero />
+      <GraphicDesignShowcase />
       <GraphicDesignServices />
       <Testimonials straightBottomCorners={true} />
       <BrandingFAQ />
