@@ -103,9 +103,9 @@ export default function CaseStudies() {
               </div>
 
               {/* Right Side: Mockup Card */}
-              <div className="w-full md:w-1/2 min-h-[300px] md:min-h-full p-2 md:p-4 flex items-center justify-center relative">
+              <div className="w-full md:w-1/2 h-[300px] sm:h-[350px] md:h-auto p-2 md:p-4 flex items-stretch justify-center relative">
                 {/* Image container with fully rounded corners */}
-                <div className="w-full h-full bg-[#111111] flex items-center justify-center relative overflow-hidden group rounded-[24px] md:rounded-[32px]">
+                <div className="w-full h-full min-h-[250px] bg-[#111111] flex items-center justify-center relative overflow-hidden group rounded-[24px] md:rounded-[32px]">
                   <Image 
                     src={caseStudies[currentIndex].image}
                     alt={caseStudies[currentIndex].title}
