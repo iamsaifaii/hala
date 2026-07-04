@@ -17,7 +17,7 @@ export default function OurJourney() {
 
   return (
       <section className="bg-[#111111] text-white w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 relative overflow-hidden rounded-[40px] sm:rounded-[60px]">
-        <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center">
+        <div className="max-w-[1200px] w-full mx-auto flex flex-col items-center">
 
         {/* Title & Subtitle */}
         <div className="text-center mb-10 md:mb-14">

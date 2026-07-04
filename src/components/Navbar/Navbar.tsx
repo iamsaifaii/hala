@@ -211,19 +211,27 @@ export default function Navbar() {
   );
 
   return (
-    <header className="flex flex-col items-center pt-5 px-4 sm:px-6 sticky top-0 z-[9999] w-full">
+    <header className="flex flex-col items-center pt-5 px-4 sm:px-6 fixed top-0 left-0 right-0 z-[9999] w-full transition-all duration-500">
       {/* 
         Main navbar container.
         Notice there is NO background color on the nav itself to ensure perfect layering.
       */}
       <nav
-        className={`flex items-center justify-between border border-[#e5e5e5] rounded-xl py-3 px-4 sm:px-5 w-full max-w-[1080px] shadow-sm relative transition-all duration-300`}
+        className={`flex items-center justify-between py-3 px-4 sm:px-6 w-full max-w-[1080px] relative transition-all duration-500 ease-out rounded-full ${
+          scrolled 
+            ? 'border border-[#111111]/10 shadow-[0_8px_30px_rgba(0,0,0,0.08)]' 
+            : 'border border-[#e5e5e5] shadow-sm'
+        }`}
       >
         {/* 
           Background Layer: Absolute sibling
           This dynamically applies the blur only on scroll WITHOUT causing Safari clipping bugs on the nav content!
         */}
-        <div className={`absolute inset-0 rounded-xl -z-10 pointer-events-none transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md' : 'bg-white'}`} />
+        <div 
+          className={`absolute inset-0 rounded-full -z-10 pointer-events-none transition-all duration-500 ease-out ${
+            scrolled ? 'bg-white/65 backdrop-blur-lg' : 'bg-white'
+          }`} 
+        />
 
         {/* Logo */}
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 z-10 no-underline transition-opacity hover:opacity-80">

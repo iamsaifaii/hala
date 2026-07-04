@@ -22,11 +22,11 @@ const industries = [
 
 export default function IndustriesWeCover() {
   return (
-    <section className="bg-[#111111] rounded-[40px] md:rounded-[60px] py-12 md:py-16 w-full relative overflow-hidden">
-      <div className="max-w-[1600px] mx-auto flex flex-col items-center">
+    <section className="bg-white py-16 md:py-20 w-full relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto flex flex-col items-center">
 
         {/* Title */}
-        <h3 className="font-ebgaramond font-bold text-white/90 text-xl md:text-4xl mb-13 text-center px-4">
+        <h3 className="font-ebgaramond font-bold text-[#111111] text-xl md:text-4xl mb-12 text-center px-4">
           Industries We Cover
         </h3>
 
@@ -40,7 +40,7 @@ export default function IndustriesWeCover() {
               return (
                 <div
                   key={`first-${index}`}
-                  className="flex items-center gap-3 px-8 md:px-12 text-white/80 hover:text-white transition-colors cursor-default"
+                  className="flex items-center gap-3 px-8 md:px-12 text-[#111111]/80 hover:text-[#111111] transition-colors cursor-default"
                 >
                   <Icon className="w-6 h-6 md:w-7 md:h-7 stroke-[1.5]" />
                   <span className="font-poppins text-lg md:text-xl font-medium tracking-tight">
@@ -58,7 +58,7 @@ export default function IndustriesWeCover() {
               return (
                 <div
                   key={`second-${index}`}
-                  className="flex items-center gap-3 px-8 md:px-12 text-white/80 hover:text-white transition-colors cursor-default"
+                  className="flex items-center gap-3 px-8 md:px-12 text-[#111111]/80 hover:text-[#111111] transition-colors cursor-default"
                 >
                   <Icon className="w-6 h-6 md:w-7 md:h-7 stroke-[1.5]" />
                   <span className="font-poppins text-lg md:text-xl font-medium tracking-tight">

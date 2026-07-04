@@ -6,10 +6,13 @@ import MarketingSolutions from '@/components/MarketingSolutions/MarketingSolutio
 
 const OurServices = dynamic(() => import('@/components/OurServices/OurServices'));
 const IndustriesWeCover = dynamic(() => import('@/components/IndustriesWeCover/IndustriesWeCover'));
+const CaseStudies = dynamic(() => import('@/components/CaseStudies/CaseStudies'));
 const WhyChooseHala = dynamic(() => import('@/components/WhyChooseHala/WhyChooseHala'));
 const OurJourney = dynamic(() => import('@/components/OurJourney/OurJourney'));
 const OurProcess = dynamic(() => import('@/components/OurProcess/OurProcess'));
+const ScrollStacking = dynamic(() => import('@/components/ScrollStacking/ScrollStacking'));
 const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const ContactConsultation = dynamic(() => import('@/components/ContactConsultation/ContactConsultation'));
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
 export const metadata: Metadata = {
@@ -34,17 +37,21 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <div className="font-sans bg-[#111111] text-[#111]">
+    <div className="font-sans bg-[#111111] text-[#111] overflow-x-hidden">
       <Navbar />
       <main className="bg-[#111111]">
         <Hero />
         <MarketingSolutions />
         <OurServices />
         <IndustriesWeCover />
+        <CaseStudies />
         <WhyChooseHala />
-        <OurJourney />
-        <OurProcess />
+        <ScrollStacking 
+          journeyComponent={<OurJourney />} 
+          processComponent={<OurProcess />} 
+        />
         <Testimonials />
+        <ContactConsultation />
       </main>
       <div className="bg-white pt-16 md:pt-24 pb-0">
         <Footer />

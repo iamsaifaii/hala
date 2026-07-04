@@ -69,10 +69,10 @@ export default function Testimonials({ straightBottomCorners = false }: { straig
   ];
 
   return (
-    <section className={`bg-[#111111] text-white w-full py-20 md:py-32 relative overflow-hidden flex flex-col items-center rounded-t-[40px] sm:rounded-t-[60px] ${straightBottomCorners ? 'rounded-b-none' : 'rounded-b-[40px] sm:rounded-b-[60px]'}`}>
+    <section className={`bg-[#111111] text-white w-full py-16 md:py-20 relative overflow-hidden flex flex-col items-center rounded-t-[40px] sm:rounded-t-[60px] ${straightBottomCorners ? 'rounded-b-none' : 'rounded-b-[40px] sm:rounded-b-[60px]'}`}>
 
       {/* Title Area */}
-      <div className="relative text-center mb-20 md:mb-28 z-10 w-full flex flex-col items-center justify-center">
+      <div className="relative text-center mb-16 md:mb-20 z-10 w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center">
         <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.1] tracking-tight relative z-10 px-4 text-center">
           <span className="block mb-2 text-[#cccccc] text-sm md:text-base tracking-[0.3em] font-semibold uppercase">What Our Clients Say</span>
           <span className="eb-garamond italic font-normal">Our</span> Testimonials

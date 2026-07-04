@@ -8,8 +8,8 @@ export default function WhyChooseHala() {
   ];
 
   return (
-    <section className="bg-white w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 flex justify-center rounded-[40px] md:rounded-[60px]">
-      <div className="max-w-[1000px] w-full bg-white rounded-[32px] border-2 border-[#111111] p-8 md:p-14 lg:p-16 relative shadow-[8px_8px_0px_0px_#111111] md:shadow-[12px_12px_0px_0px_#111111]">
+    <section className="bg-white w-full px-5 sm:px-8 md:px-12 lg:px-16 pt-8 md:pt-10 pb-16 md:pb-20 flex justify-center">
+      <div className="max-w-[1200px] w-full bg-white rounded-[32px] border-2 border-[#111111] p-8 md:p-14 lg:p-16 relative shadow-[8px_8px_0px_0px_#111111] md:shadow-[12px_12px_0px_0px_#111111]">
         
         {/* Content Container */}
         <div className="flex flex-col items-center text-center relative z-10">

@@ -19,12 +19,12 @@ export default function MarketingSolutions() {
   ];
 
   return (
-    <section className="font-poppins w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-16 lg:py-24 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px] z-20">
+    <section className="font-poppins w-full bg-[#111111] px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px] z-20">
 
       {/* Background decorative elements (subtle grain/texture would go here in prod) */}
       <div className="absolute top-0 right-0 w-full h-24 bg-gradient-to-b from-[#f8f6ed] to-transparent opacity-[0.03]"></div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
 
         {/* Left Column: Headline and Interactive Tags */}
         <div className="flex flex-col z-10 text-center lg:text-left items-center lg:items-start order-1">

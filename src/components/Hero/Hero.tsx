@@ -23,22 +23,22 @@ export default function Hero() {
   useGSAP(() => {
     ScrollTrigger.create({
       trigger: containerRef.current,
-      start: "top top",
+      start: 'top top',
+      end: '+=100%',
       pin: true,
-      pinSpacing: false, // Allows next section to scroll over it
+      pinSpacing: false,
     });
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative z-0 flex flex-col items-center justify-between text-center px-0 sm:px-0 w-full min-h-screen overflow-hidden -mt-[100px] pt-[100px] pb-0 sm:pb-0 md:pb-0">
+    <section ref={containerRef} className="relative z-0 flex flex-col items-center justify-between text-center px-0 sm:px-0 w-full h-[100svh] min-h-[600px] overflow-hidden pt-[100px]">
       {/* Background Image Setup */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/heropic.png"
+          src="/mainpic.png"
           alt="Hero Background"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-          className="opacity-90 blur-[2px] scale-105"
+          className="object-cover opacity-90"
           priority
           quality={90}
         />
@@ -47,8 +47,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-[#111111]"></div>
       </div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center w-full flex-grow px-4 sm:px-6 -mt-[120px] md:-mt-20">
-        <h1 className="font-poppins text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[82px] font-extrabold leading-[1.1] tracking-[-1px] mb-6 max-w-[900px] w-full text-white">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full flex-grow px-4 sm:px-6 -mt-16 md:-mt-24">
+        <h1 className="font-poppins text-[36px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[82px] font-extrabold leading-[1.1] tracking-[-1px] mb-6 max-w-[900px] w-full text-white">
           <span className="text-white font-semibold">
             <em className="eb-garamond  ">Scale</em>{' '}
             your brand</span>{' '}

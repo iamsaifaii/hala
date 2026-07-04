@@ -61,7 +61,7 @@ export default function OurProcess() {
   return (
     <div className="w-full bg-white text-[#111111] font-poppins antialiased overflow-x-hidden flex flex-col items-center justify-center px-4 md:px-8 select-none relative py-12 sm:py-16 md:py-24 rounded-[40px] md:rounded-[60px]">
       
-      <header className="w-full max-w-5xl text-center z-10 space-y-3 sm:space-y-4 mb-6 sm:mb-8 md:mb-12">
+      <header className="w-full max-w-[1200px] text-center z-10 space-y-3 sm:space-y-4 mb-6 sm:mb-8 md:mb-12">
         <p className="text-[9px] sm:text-[10px] md:text-xs tracking-[0.4em] text-[#888888] font-poppins uppercase font-semibold">
           OUR PROCESS
         </p>
@@ -75,7 +75,7 @@ export default function OurProcess() {
         </p>
       </header>
 
-      <div className="w-full max-w-4xl aspect-[1/1.1] sm:aspect-[1.3/1] md:aspect-[1.6/1] relative flex items-center justify-center z-10 py-6 sm:py-12 mt-4 sm:mt-0">
+      <div className="w-full max-w-5xl aspect-[1/1.1] sm:aspect-[1.3/1] md:aspect-[1.6/1] relative flex items-center justify-center z-10 py-6 sm:py-12 mt-4 sm:mt-0">
         
         {/* Orbital Path Boundaries & Connectors */}
         <div className="absolute w-[82%] h-[82%] sm:h-[78%] border border-dashed border-[#111111]/20 rounded-[40%] pointer-events-none" />
