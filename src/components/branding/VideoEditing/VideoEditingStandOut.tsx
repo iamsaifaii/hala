@@ -71,7 +71,7 @@ export default function VideoEditingStandOut() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#fcfcfc] text-[#111] py-24 md:py-32 lg:py-40 px-6 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
+    <section ref={containerRef} className="w-full bg-[#fcfcfc] text-[#111] py-16 md:py-24 px-6 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
         {/* Left Side: Parallax Showcase */}

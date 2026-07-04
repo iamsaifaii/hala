@@ -4,7 +4,7 @@ import { Scissors, Activity, PlaySquare } from 'lucide-react';
 
 export default function VideoEditingDetails() {
   return (
-    <section className="w-full bg-white text-[#111] py-24 md:py-32 lg:py-40 px-6 sm:px-8 md:px-12 lg:px-16 relative z-20">
+    <section className="w-full bg-white text-[#111] py-16 md:py-24 px-6 sm:px-8 md:px-12 lg:px-16 relative z-20">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 relative">
 
         {/* Left Side: Sticky Heading */}

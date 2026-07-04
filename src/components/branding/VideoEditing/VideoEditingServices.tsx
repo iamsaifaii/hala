@@ -81,13 +81,13 @@ export default function VideoEditingServices() {
   };
 
   return (
-    <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20 relative overflow-hidden z-20">
+    <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-12 md:py-16 relative overflow-hidden z-20">
       
       {/* Background ambient glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#007FFF]/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#007FFF]/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1400px] mx-auto relative z-10">
 
         {/* Top Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-20">
@@ -104,7 +104,7 @@ export default function VideoEditingServices() {
         </div>
 
         {/* Bottom Section: Exact Screenshot Layout with Accordion */}
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-8">
+        <div className="w-full max-w-[1400px] mx-auto flex flex-col gap-8">
           
           {/* Main White Card with Two Columns */}
           <div className="bg-white rounded-[24px] md:rounded-[32px] p-6 sm:p-12 md:p-14 shadow-[0_15px_50px_rgba(0,0,0,0.06)] border border-[#eeeeee]">
