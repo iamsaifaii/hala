@@ -38,7 +38,7 @@ export default function Hero() {
           src="/mainpic.png"
           alt="Hero Background"
           fill
-          className="object-cover opacity-90"
+          className="object-cover object-center md:object-center opacity-90"
           priority
           quality={90}
         />

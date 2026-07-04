@@ -14,7 +14,7 @@ export default function WaveMarquee() {
   return (
     <>
       {/* Mobile Marquee (Tighter curve for small screens) */}
-      <div className="absolute md:hidden w-full min-w-[800px] left-1/2 -translate-x-1/2 h-[220px] z-10 pointer-events-none select-none overflow-hidden bottom-20">
+      <div className="absolute md:hidden w-full min-w-[800px] left-1/2 -translate-x-1/2 h-[220px] z-10 pointer-events-none select-none overflow-hidden -bottom-4">
         <svg
           className="w-full h-full"
           viewBox="0 0 800 220"
