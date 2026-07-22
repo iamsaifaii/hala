@@ -7,7 +7,7 @@ import VideoEditingStandOut from '@/components/branding/VideoEditing/VideoEditin
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
-const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const CustomTestimonials = dynamic(() => import('@/components/Home/Testimonials'));
 const BrandingFAQ = dynamic(() => import('@/components/branding/BrandingFAQ'));
 const BrandingBlogs = dynamic(() => import('@/components/branding/BrandingBlogs'));
 
@@ -25,7 +25,7 @@ export default function VideoEditingPage() {
       <VideoEditingDetails />
       <VideoEditingServices />
       <VideoEditingStandOut />
-      <Testimonials straightBottomCorners={true} />
+      <CustomTestimonials />
       <BrandingFAQ />
       <BrandingBlogs />
     </div>

@@ -1,7 +1,7 @@
 'use client';
-import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const teamMembers = [
@@ -9,123 +9,136 @@ const teamMembers = [
     id: 5,
     name: 'Taimoor Ali Warraich',
     role: 'Co-Founder',
-    description: 'Leads the company vision and strategy, ensuring we deliver exceptional value to our clients.',
+    category: 'Management',
     image: '/Team pics/Ceo.jpg',
   },
   {
     id: 1,
     name: 'Saif Ali',
     role: 'UI/UX & Web Developer',
-    description: 'Designs and builds intuitive digital experiences with cutting-edge web technologies.',
+    category: 'Development',
     image: '/Team pics/Ui Ux & Web devloepr.jpg',
   },
   {
     id: 2,
     name: 'Rimza Habib',
     role: 'SEO Manager',
-    description: 'Expert in search engine algorithms, ensuring our clients rank at the top of their industries.',
+    category: 'Marketing',
     image: '/Team pics/Seo manager.jpg',
   },
   {
     id: 6,
     name: 'Hasnain Akbar',
     role: 'SEO Expert',
-    description: 'Specializes in on-page and off-page optimization to maximize organic search visibility.',
+    category: 'Marketing',
     image: '/Team pics/seo expert.jpg',
   },
   {
     id: 3,
     name: 'Chaman shafique',
     role: 'Content Writer',
-    description: 'Crafts compelling brand narratives and drives engagement through impactful content marketing.',
+    category: 'Creative',
     image: '/Team pics/Contetn writer.jpg',
   },
   {
     id: 4,
     name: 'Abdur Rafay',
     role: 'Video Editor',
-    description: 'Brings stories to life through dynamic, high-quality video content and motion graphics.',
+    category: 'Creative',
     image: '/Team pics/videoeditor.jpg',
   },
 ];
 
-function TeamCard({ member }: { member: typeof teamMembers[0] }) {
-  return (
-    <div className="flex flex-col bg-[#1a1a1a] rounded-[24px] overflow-hidden border border-[#2a2a2a] w-[240px] sm:w-[280px] md:w-[320px] shrink-0 text-left">
-      {/* Image Placeholder */}
-      <div className="w-full aspect-square sm:aspect-[4/3] bg-[#1a1a1a] relative overflow-hidden flex items-center justify-center">
-        {member.image.includes('placeholder') ? (
-          <div className="text-[#555] font-poppins text-sm tracking-widest uppercase">
-            Image {member.id}
-          </div>
-        ) : (
-          <Image src={member.image} alt={member.name} fill className="object-contain object-center" />
-        )}
-      </div>
-      {/* Content */}
-      <div className="p-5 md:p-6 flex flex-col flex-grow">
-        <h3 className="font-poppins font-bold text-lg md:text-xl text-white mb-1">
-          {member.name}
-        </h3>
-        <p className="font-poppins text-white/50 text-[11px] md:text-xs font-semibold uppercase tracking-wider mb-2">
-          {member.role}
-        </p>
-        <p className="font-poppins text-[#aaaaaa] text-[11px] md:text-xs leading-relaxed flex-grow whitespace-normal">
-          {member.description}
-        </p>
-      </div>
-    </div>
-  );
-}
+const categories = ['View all', 'Management', 'Development', 'Marketing', 'Creative'];
 
 export default function OurTeam() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  });
+  const [activeCategory, setActiveCategory] = useState('View all');
 
-  // Scale down and fade slightly as the user scrolls past
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4]);
+  const filteredTeam = teamMembers.filter(member => 
+    activeCategory === 'View all' ? true : member.category === activeCategory
+  );
 
   return (
-    <div ref={containerRef} className="relative h-[130vh] bg-white">
-      <motion.section
-        style={{ scale, opacity }}
-        className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#111111] rounded-t-[40px] sm:rounded-t-[60px]"
-      >
-        <div className="w-full max-w-[1600px] mx-auto flex flex-col items-center pt-8 md:pt-12 pb-8">
-
-          {/* Header */}
-          <div className="text-center mb-8 md:mb-12 w-full px-4">
-            <p className="font-poppins text-xs md:text-sm font-bold tracking-[3px] uppercase text-[#666] mb-3">
-              Meet The Experts
-            </p>
-            <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.05] tracking-tight text-white">
-              Our <span className="eb-garamond italic font-normal text-white">Marketing</span> Team
-            </h2>
-          </div>
-
-          {/* Marquee Wrapper */}
-          <div className="w-full relative flex items-center overflow-hidden py-4">
-            {/* Track 1 */}
-            <div className="flex items-center gap-6 md:gap-8 px-3 md:px-4 animate-marquee min-w-max shrink-0">
-              {teamMembers.map((member, idx) => (
-                <TeamCard key={`first-${member.id}-${idx}`} member={member} />
-              ))}
-            </div>
-
-            {/* Track 2 */}
-            <div className="flex items-center gap-6 md:gap-8 px-3 md:px-4 animate-marquee min-w-max shrink-0" aria-hidden="true">
-              {teamMembers.map((member, idx) => (
-                <TeamCard key={`second-${member.id}-${idx}`} member={member} />
-              ))}
-            </div>
-          </div>
-
+    <section className="bg-white w-full pt-8 md:pt-12 pb-20 px-4 sm:px-6 md:px-8 lg:px-12 flex justify-center overflow-hidden">
+      <div className="max-w-[1000px] w-full flex flex-col items-center">
+        
+        {/* Header */}
+        <div className="text-center mb-10 w-full max-w-3xl">
+          <h2 className="font-poppins text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium leading-[1.05] tracking-tight text-[#111111] mb-6">
+            Meet the team that makes<br />
+            the <span className="eb-garamond italic font-normal text-[#111111]">magic</span> happen
+          </h2>
+          <p className="font-poppins text-[#666666] text-base md:text-lg font-medium px-4">
+            Meet our diverse team of world-class creators, developers, and problem solvers.
+          </p>
         </div>
-      </motion.section>
-    </div>
+
+        {/* Categories */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 md:mb-16">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 md:px-6 py-2 rounded-full text-[13px] md:text-[14px] font-semibold transition-all duration-300 border ${
+                activeCategory === category
+                  ? 'bg-white border-[#E5E5E5] text-[#111111] shadow-[0_4px_12px_rgba(0,0,0,0.05)]'
+                  : 'bg-transparent border-transparent text-[#777777] hover:text-[#111111] hover:bg-[#F9FAFB]'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Cards Container */}
+        <motion.div 
+          layout
+          className="flex flex-wrap justify-center gap-6 w-full"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredTeam.map((member) => (
+              <motion.div
+                key={member.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] relative aspect-square rounded-[24px] overflow-hidden group cursor-pointer border border-[#E5E5E5] bg-[#F9FAFB] shadow-[0_8px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500"
+              >
+                {/* Image */}
+                <div className="absolute inset-0 w-full h-full">
+                  {member.image.includes('placeholder') ? (
+                    <div className="w-full h-full flex items-center justify-center text-[#999] font-poppins text-xs tracking-widest uppercase">
+                      Image {member.id}
+                    </div>
+                  ) : (
+                    <Image 
+                      src={member.image} 
+                      alt={member.name} 
+                      fill 
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+
+                {/* Info Panel */}
+                <div className="absolute bottom-4 left-0 right-0 w-[85%] mx-auto">
+                  <div className="bg-white/95 backdrop-blur-md rounded-[16px] py-3 px-4 flex flex-col items-center justify-center text-center shadow-sm border border-white/50">
+                    <h3 className="font-poppins font-bold text-[#111111] text-[14px] md:text-[15px] leading-tight mb-0.5">
+                      {member.name}
+                    </h3>
+                    <p className="font-poppins text-[#666666] text-[11px] md:text-[12px] font-medium">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+      </div>
+    </section>
   );
 }

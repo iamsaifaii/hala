@@ -53,8 +53,6 @@ export default function SocialMediaShowcase() {
           </div>
         </div>
 
-
-
         {/* 5. Below that 4 images, side by side. */}
         <div className="w-full grid grid-cols-2 md:grid-cols-4">
           <div className="w-full aspect-[3/4] relative overflow-hidden group">

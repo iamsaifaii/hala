@@ -4,7 +4,7 @@ import SocialMediaShowcase from '@/components/branding/GraphicDesign/SocialMedia
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
-const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const CustomTestimonials = dynamic(() => import('@/components/Home/Testimonials'));
 const BrandingFAQ = dynamic(() => import('@/components/branding/BrandingFAQ'));
 const BrandingBlogs = dynamic(() => import('@/components/branding/BrandingBlogs'));
 const OutroMessage = dynamic(() => import('@/components/About/OutroMessage'));
@@ -36,7 +36,7 @@ export default function GraphicDesignPage() {
       <GraphicDesignHero />
       <SocialMediaShowcase />
       <GraphicDesignServices />
-      <Testimonials straightBottomCorners={true} />
+      <CustomTestimonials />
       <BrandingFAQ />
       <BrandingBlogs />
       <OutroMessage />

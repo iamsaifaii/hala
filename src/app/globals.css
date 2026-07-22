@@ -23,10 +23,16 @@
   --color-brand-faint: #888888;
 
   --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
 
   @keyframes marquee {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
+  }
+
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
   }
 }
 
@@ -40,8 +46,13 @@
 }
 
 /* ─── Base ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -50,4 +61,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   background-color: #111111;
+  min-width: 320px;
 }

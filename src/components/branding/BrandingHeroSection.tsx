@@ -26,7 +26,6 @@ export default function BrandingHeroSection() {
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             className="opacity-90 blur-[2px] scale-105"
             priority
-            quality={90}
           />
           {/* Black overlays for high contrast and black-and-white design system */}
           <div className="absolute inset-0 bg-black/50"></div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import {
-  Compass, PenTool, Plus, Minus, ArrowRight, ArrowUpRight
+  TrendingUp, MonitorSmartphone, Plus, Minus, ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,50 +24,68 @@ interface ServiceCategory {
 
 const categories: ServiceCategory[] = [
   {
-    title: 'Strategy & Positioning',
-    icon: Compass,
+    title: 'Marketing & Strategy',
+    icon: TrendingUp,
     services: [
       {
-        id: 'brand-strategy-expansion',
-        title: 'Brand Strategy Expansion',
-        description: 'Evolve your brand identity to reach new markets and capture broader demographics seamlessly.',
-        href: '#'
+        id: 'digital-marketing',
+        title: 'Digital Marketing',
+        description: 'Are you struggling to reach your target audience or convert clicks into customers? At Hala Smart Technologies, we provide professional digital marketing services in Dubai that help businesses grow smarter and faster. From SEO to PPC, social media marketing to content strategies, our experts use proven methods to increase visibility, drive qualified leads, and maximize ROI.',
+        href: '/marketing/digital'
       },
       {
-        id: 'brand-strategy',
-        title: 'Brand Strategy',
-        description: 'Build the foundational roadmap and positioning to secure long-term market dominance.',
-        href: '#'
+        id: 'seo',
+        title: 'Search Engine Optimization',
+        description: 'Looking for professional SEO services in Dubai that help your business stand out online? At Hala Smart Technology, we specialize in delivering data-driven, innovative, and strategic SEO solutions that not only improve rankings but also drive real results. Whether you need keyword research, on-page optimization, technical SEO or complete search engine optimization management, our team is here to turn your website into a powerful lead generating platform.',
+        href: '/marketing/seo'
       },
       {
-        id: 'corporate-rebranding',
-        title: 'Corporate Rebranding',
-        description: 'Revitalize legacy brands and modernize corporate identities for the digital landscape.',
-        href: '#'
+        id: 'whatsapp-automation',
+        title: 'WhatsApp Automation',
+        description: 'At Hala Technology, we help businesses transform WhatsApp from a simple chat tool into a powerful automated communication channel. Our WhatsApp Automation solutions streamline customer interactions, boost response times, and allow you to engage your audience around the clock without the need for constant manual effort.',
+        href: '/marketing/whatsapp'
+      },
+      {
+        id: 'content-creation',
+        title: 'Content Creation',
+        description: 'Struggling to create content that grabs attention and drives results? At Hala Smart Technologies, we provide professional content creation services in Dubai designed to help businesses communicate their brand story effectively. From website content to social media posts, blogs to video scripts, our creative team ensures your content not only looks great but also performs.',
+        href: '/marketing/content'
       }
     ]
   },
   {
-    title: 'Identity & Expression',
-    icon: PenTool,
+    title: 'Design & Development',
+    icon: MonitorSmartphone,
     services: [
       {
-        id: 'observable-profile-design',
-        title: 'Observable Profile Design',
-        description: 'Craft striking visual profiles and assets that instantly communicate your core values.',
-        href: '#'
+        id: 'web-development',
+        title: 'Web Development',
+        description: 'Looking for professional web development services in Dubai that deliver results? At Hala Smart Technologies, we design and develop websites that don’t just look good they perform, convert, and scale with your business. From custom websites to eCommerce Platforms, our expert developers combine creativity, strategy, and the latest technology to give your brand a strong online presence.',
+        href: '/development/web'
       },
       {
-        id: 'brand-tone',
-        title: 'Brand Tone',
-        description: 'Develop a unique, consistent voice that resonates authentically with your target audience.',
-        href: '#'
+        id: 'graphic-designing',
+        title: 'Graphic Designing',
+        description: 'Looking for professional graphic design services in Dubai that make your business stand out? At Hala Smart Technologies, we specialize in delivering eye-catching, innovative, and strategic designs that not only look stunning but also convert. Whether you need logo design, social media graphics, marketing materials, or complete brand identity design, our team is here to turn your ideas into impactful visuals.',
+        href: '/branding/graphic-design'
+      },
+      {
+        id: 'video-editing',
+        title: 'Video Editing',
+        description: 'Looking for professional video editing services in Dubai that bring your stories to life? At Hala Smart Technologies, we specialize in transforming your raw footage into polished, engaging, and impactful videos. Whether it’s for social media, corporate presentations, ads, or events, our expert editors use creativity and the latest tools to deliver videos that truly stand out.',
+        href: '/branding/video'
+      },
+      {
+        id: 'ai-agent',
+        title: 'AI Agent',
+        description: 'Looking to scale your business with the power of artificial intelligence? At Hala Smart Technologies, we provide advanced AI agent services in Dubai designed to automate repetitive tasks, boost efficiency, and improve customer experience. From chatbots to workflow automation, our AI solutions empower businesses to work smarter and stay ahead of the competition.',
+        href: '/development/ai'
       }
     ]
   }
 ];
 
-export default function BrandingServices() {
+export default function Services() {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(null);
 
   const toggleService = (id: string) => {
@@ -77,7 +95,7 @@ export default function BrandingServices() {
   return (
     <section className="font-sans bg-white text-[#111111] w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-20 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px]">
       
-      {/* Background ambient glows */}
+      {/* Background ambient glows similar to the screenshot */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#007FFF]/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#007FFF]/5 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -86,14 +104,14 @@ export default function BrandingServices() {
         {/* Top Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-20">
           <div className="bg-[#007FFF] text-white px-5 py-2 rounded-full text-sm font-semibold mb-8 shadow-sm">
-            Branding Services
+            Our Services
           </div>
           <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight mb-6 text-[#111111]">
-            End-to-End<br className="hidden sm:block" />
-            Branding <span className="eb-garamond italic pr-2">Solutions.</span>
+            Tailored services.<br className="hidden sm:block" />
+            Hala does it <span className="eb-garamond italic pr-2">perfectly.</span>
           </h2>
           <p className="text-lg md:text-xl text-[#555555] font-medium max-w-xl">
-            Comprehensive solutions to build, elevate, and transform your brand at every touchpoint.
+            Hala works wherever you need growth. Any platform, device, or market.
           </p>
         </div>
 
@@ -194,12 +212,12 @@ export default function BrandingServices() {
                 </svg>
               </div>
               <p className="text-white text-[14px] md:text-[15px] font-medium">
-                Need a striking visual profile or complete rebranding? Let's build your identity.
+                Need bold design or reliable code or both? You're in the right place.
               </p>
             </div>
             
             <button className="bg-[#007FFF] text-white font-bold text-[11px] md:text-[12px] tracking-wide px-6 py-3 rounded-full hover:scale-105 transition-transform whitespace-nowrap w-full md:w-auto shadow-md shadow-[#007FFF]/20">
-              CONTACT US
+              BOOK A CALL
             </button>
           </div>
 

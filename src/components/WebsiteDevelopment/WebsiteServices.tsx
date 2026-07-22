@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 import {
-  Compass, PenTool, Plus, Minus, ArrowRight, ArrowUpRight
+  MonitorSmartphone,
+  Code,
+  Plus,
+  Minus,
+  ArrowRight,
+  ArrowUpRight
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,50 +29,80 @@ interface ServiceCategory {
 
 const categories: ServiceCategory[] = [
   {
-    title: 'Strategy & Positioning',
-    icon: Compass,
+    title: 'Design & Experience',
+    icon: MonitorSmartphone,
     services: [
       {
-        id: 'brand-strategy-expansion',
-        title: 'Brand Strategy Expansion',
-        description: 'Evolve your brand identity to reach new markets and capture broader demographics seamlessly.',
-        href: '#'
+        id: 'create-and-customize',
+        title: 'Create and Customize Website Design',
+        description: 'We design and update websites that reflect your brand. Our custom sites are responsive, user-friendly, and work seamlessly across all devices. Whether you’re starting from scratch or upgrading an existing site, we help you build a fast, functional online presence.'
       },
       {
-        id: 'brand-strategy',
-        title: 'Brand Strategy',
-        description: 'Build the foundational roadmap and positioning to secure long-term market dominance.',
-        href: '#'
+        id: 'engaging-mobile-ready',
+        title: 'Engaging, Mobile-Ready Design',
+        description: 'We build websites that not only look good but also work perfectly on computers, tablets, and phones. Every site we create is easy to use, works on all devices, and is designed to give every visitor a smooth experience. This will help your business grow online.'
       },
       {
-        id: 'corporate-rebranding',
-        title: 'Corporate Rebranding',
-        description: 'Revitalize legacy brands and modernize corporate identities for the digital landscape.',
-        href: '#'
+        id: 'ecommerce-growth',
+        title: 'E-Commerce Growth',
+        description: 'We build online stores that engage customers and make it easy for them to check out, no matter which platform you choose: Woocommerce, Shopify, or Magento. We help you boost your sales and make shopping easy by giving you eye-catching designs, simple navigation, and fast performance.'
+      },
+      {
+        id: 'pwa-technology',
+        title: 'Progressive Web Apps (PWA) Technology',
+        description: 'We build web apps that are fast, work offline, and feel like mobile apps. These apps open quickly, look great, and work even with low internet. At Hala, we make sure your users always get a smooth and modern experience, no matter where they are.'
+      },
+      {
+        id: 'multilingual-website',
+        title: 'Multilingual Website Development',
+        description: 'When English isn’t enough, we provide Italian, Arabic, or any language your market needs. Hala technologies adjusts hreflang tags and regional keywords so every audience feels the site was created just for them.'
+      },
+      {
+        id: 'website-exodus-redesign',
+        title: 'Website Exodus & Redesign',
+        description: 'We move tired sites onto a modern stack, transferring every asset without breaking links. Hala adds a fresh, crisp design, all while keeping the old address live so visitors never notice the change.'
       }
     ]
   },
   {
-    title: 'Identity & Expression',
-    icon: PenTool,
+    title: 'Engineering & Performance',
+    icon: Code,
     services: [
       {
-        id: 'observable-profile-design',
-        title: 'Observable Profile Design',
-        description: 'Craft striking visual profiles and assets that instantly communicate your core values.',
-        href: '#'
+        id: 'cms-implementation',
+        title: 'Implementation and Integration of CMS',
+        description: 'With WordPress, Joomla, or a custom CMS, you can easily update text, images, and products without touching code. Hala designs the dashboard around your workflow, so managing and editing your site feels natural. Even if you’re not tech-savvy, updating content is quick, simple, and completely hassle-free.'
       },
       {
-        id: 'brand-tone',
-        title: 'Brand Tone',
-        description: 'Develop a unique, consistent voice that resonates authentically with your target audience.',
-        href: '#'
+        id: 'speed-performance-upgrading',
+        title: 'Speed & Performance upgrading',
+        description: 'We make websites faster by using smart tools and optimized code. Fast-loading pages help users stay longer and improve your site’s ranking on search engines. At Hala, we make sure your website runs smoothly every time.'
+      },
+      {
+        id: 'seo-friendly-coding',
+        title: 'SEO-Friendly Coding & Framework',
+        description: 'We create websites with smart structure and optimized code so that search engines can easily find and rank them. Our designs make it easy for visitors to browse your site, which helps your business grow and your online presence.'
+      },
+      {
+        id: 'api-development',
+        title: 'API Development & Integration',
+        description: 'Need your shop plugin to notify your CRM instantly? Or a payment gateway ready on launch day? Hala connects APIs so services work together, data flows, and users don’t notice a thing.'
+      },
+      {
+        id: 'security-alignment',
+        title: 'Security & Alignment',
+        description: 'Passwords aren’t enough. We use SSL, encrypt data, and follow GDPR rules. This strong security not only blocks intruders but also tells your visitors, ‘Your data is safe here.'
+      },
+      {
+        id: 'website-management',
+        title: 'Website Management & Support',
+        description: 'At Hala, we keep your website secure and running smoothly with updates, fixes, and security checks. Plus, we handle all tech tasks so you can focus on your business. Our support team is always ready to assist.'
       }
     ]
   }
 ];
 
-export default function BrandingServices() {
+export default function WebsiteServices() {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(null);
 
   const toggleService = (id: string) => {
@@ -75,25 +110,21 @@ export default function BrandingServices() {
   };
 
   return (
-    <section className="font-sans bg-white text-[#111111] w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-20 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px]">
+    <section className="font-sans bg-white text-[#111111] w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-20 relative overflow-hidden">
       
-      {/* Background ambient glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#007FFF]/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#007FFF]/5 rounded-full blur-[100px] pointer-events-none"></div>
-
       <div className="max-w-[1200px] mx-auto relative z-10">
 
         {/* Top Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-20">
           <div className="bg-[#007FFF] text-white px-5 py-2 rounded-full text-sm font-semibold mb-8 shadow-sm">
-            Branding Services
+            Web Design UAE
           </div>
           <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight mb-6 text-[#111111]">
-            End-to-End<br className="hidden sm:block" />
-            Branding <span className="eb-garamond italic pr-2">Solutions.</span>
+            Transforming Ideas Into <br className="hidden sm:block" />
+            <span className="eb-garamond italic pr-2">Powerful Websites.</span>
           </h2>
           <p className="text-lg md:text-xl text-[#555555] font-medium max-w-xl">
-            Comprehensive solutions to build, elevate, and transform your brand at every touchpoint.
+            We design, develop, and launch high-performing websites that drive business growth.
           </p>
         </div>
 
@@ -165,13 +196,15 @@ export default function BrandingServices() {
                                   <p className="text-white/80 text-[13px] md:text-[14px] leading-relaxed font-medium">
                                     {service.description}
                                   </p>
-                                  <Link 
-                                    href={service.href || "#"} 
-                                    className="inline-flex items-center gap-2 text-[12px] font-bold text-[#007FFF] hover:text-white transition-colors self-start"
-                                    onClick={(e) => e.stopPropagation()}
-                                  >
-                                    Explore More <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                                  </Link>
+                                  {service.href && (
+                                    <Link 
+                                      href={service.href || "#"} 
+                                      className="inline-flex items-center gap-2 text-[12px] font-bold text-[#007FFF] hover:text-white transition-colors self-start"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      Explore More <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                                    </Link>
+                                  )}
                                 </div>
                               </motion.div>
                             )}
@@ -194,12 +227,12 @@ export default function BrandingServices() {
                 </svg>
               </div>
               <p className="text-white text-[14px] md:text-[15px] font-medium">
-                Need a striking visual profile or complete rebranding? Let's build your identity.
+                Ready to build a website that drives growth? You're in the right place.
               </p>
             </div>
             
-            <button className="bg-[#007FFF] text-white font-bold text-[11px] md:text-[12px] tracking-wide px-6 py-3 rounded-full hover:scale-105 transition-transform whitespace-nowrap w-full md:w-auto shadow-md shadow-[#007FFF]/20">
-              CONTACT US
+            <button className="bg-[#007FFF] text-white font-bold text-[11px] md:text-[12px] tracking-wide px-6 py-3 rounded-full hover:scale-105 transition-transform whitespace-nowrap w-full md:w-auto">
+              BOOK A CALL
             </button>
           </div>
 

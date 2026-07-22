@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import {
-  Compass, PenTool, Plus, Minus, ArrowRight, ArrowUpRight
+  PenTool, Megaphone, Plus, Minus, ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,50 +24,62 @@ interface ServiceCategory {
 
 const categories: ServiceCategory[] = [
   {
-    title: 'Strategy & Positioning',
-    icon: Compass,
-    services: [
-      {
-        id: 'brand-strategy-expansion',
-        title: 'Brand Strategy Expansion',
-        description: 'Evolve your brand identity to reach new markets and capture broader demographics seamlessly.',
-        href: '#'
-      },
-      {
-        id: 'brand-strategy',
-        title: 'Brand Strategy',
-        description: 'Build the foundational roadmap and positioning to secure long-term market dominance.',
-        href: '#'
-      },
-      {
-        id: 'corporate-rebranding',
-        title: 'Corporate Rebranding',
-        description: 'Revitalize legacy brands and modernize corporate identities for the digital landscape.',
-        href: '#'
-      }
-    ]
-  },
-  {
-    title: 'Identity & Expression',
+    title: 'Content & Copywriting',
     icon: PenTool,
     services: [
       {
-        id: 'observable-profile-design',
-        title: 'Observable Profile Design',
-        description: 'Craft striking visual profiles and assets that instantly communicate your core values.',
+        id: 'website-writing',
+        title: 'Writing for Websites',
+        description: 'Search engine optimized, engaging copy for homepages, service pages, about pages, and landing pages that speak directly to your target audience.',
         href: '#'
       },
       {
-        id: 'brand-tone',
-        title: 'Brand Tone',
-        description: 'Develop a unique, consistent voice that resonates authentically with your target audience.',
+        id: 'blog-writing',
+        title: 'Blog & Article Writing',
+        description: 'Informative, engaging, and search-engine-optimized articles that build authority, drive traffic, and further your marketing goals.',
+        href: '#'
+      },
+      {
+        id: 'product-descriptions',
+        title: 'Product Descriptions',
+        description: 'Convincing, value-driven product copy with the best possible conversion rates and consumer confidence.',
+        href: '#'
+      },
+    ]
+  },
+  {
+    title: 'Social & Marketing',
+    icon: Megaphone,
+    services: [
+      {
+        id: 'social-media',
+        title: 'Social Media Content',
+        description: 'Platform-specific captions, visuals, post ideas, story templates, and reels scripts that hold your audience and keep your brand alive.',
+        href: '#'
+      },
+      {
+        id: 'ad-copy',
+        title: 'Ad Copywriting',
+        description: 'Copy for Google Ads, Meta Ads, and other platforms that is compelling and appealing in order to get people to pause and click.',
+        href: '#'
+      },
+      {
+        id: 'email-content',
+        title: 'Email & Newsletter Content',
+        description: 'Appealing email copy that informs leads, pushes offers, and brings your visitors back.',
+        href: '#'
+      },
+      {
+        id: 'video-scripts',
+        title: 'Video Scriptwriting',
+        description: 'Scriptwriting for YouTube content, brand explainers, reels, and ad creatives that make your message stick.',
         href: '#'
       }
     ]
   }
 ];
 
-export default function BrandingServices() {
+export default function ContentCreationServices() {
   const [activeServiceId, setActiveServiceId] = useState<string | null>(null);
 
   const toggleService = (id: string) => {
@@ -75,7 +87,7 @@ export default function BrandingServices() {
   };
 
   return (
-    <section className="font-sans bg-white text-[#111111] w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-20 relative overflow-hidden rounded-t-[40px] md:rounded-t-[60px]">
+    <section className="font-sans bg-white text-[#111111] w-full px-5 sm:px-8 md:px-12 lg:px-16 py-16 md:py-24 relative overflow-hidden">
       
       {/* Background ambient glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#007FFF]/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -86,18 +98,18 @@ export default function BrandingServices() {
         {/* Top Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-20">
           <div className="bg-[#007FFF] text-white px-5 py-2 rounded-full text-sm font-semibold mb-8 shadow-sm">
-            Branding Services
+            What We Offer
           </div>
           <h2 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight mb-6 text-[#111111]">
-            End-to-End<br className="hidden sm:block" />
-            Branding <span className="eb-garamond italic pr-2">Solutions.</span>
+            High-Performing <br className="hidden md:block" />
+            <span className="eb-garamond italic pr-2">Content</span> Services
           </h2>
-          <p className="text-lg md:text-xl text-[#555555] font-medium max-w-xl">
-            Comprehensive solutions to build, elevate, and transform your brand at every touchpoint.
+          <p className="text-lg md:text-xl text-[#555555] font-medium max-w-2xl">
+            At Hala Smart Technologies, we specialize in delivering high-performing content that combines creativity with strategy. Original, tailored content aligned with your brand identity.
           </p>
         </div>
 
-        {/* Bottom Section: Accordion */}
+        {/* Bottom Section: Exact Screenshot Layout with Accordion */}
         <div className="w-full max-w-[1200px] mx-auto flex flex-col gap-8">
           
           {/* Main White Card with Two Columns */}
@@ -170,7 +182,7 @@ export default function BrandingServices() {
                                     className="inline-flex items-center gap-2 text-[12px] font-bold text-[#007FFF] hover:text-white transition-colors self-start"
                                     onClick={(e) => e.stopPropagation()}
                                   >
-                                    Explore More <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                                    Contact Now <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
                                   </Link>
                                 </div>
                               </motion.div>
@@ -194,12 +206,12 @@ export default function BrandingServices() {
                 </svg>
               </div>
               <p className="text-white text-[14px] md:text-[15px] font-medium">
-                Need a striking visual profile or complete rebranding? Let's build your identity.
+                Ready to empower your brand with high-quality content? Let's talk strategy.
               </p>
             </div>
             
             <button className="bg-[#007FFF] text-white font-bold text-[11px] md:text-[12px] tracking-wide px-6 py-3 rounded-full hover:scale-105 transition-transform whitespace-nowrap w-full md:w-auto shadow-md shadow-[#007FFF]/20">
-              CONTACT US
+              BOOK A CALL
             </button>
           </div>
 

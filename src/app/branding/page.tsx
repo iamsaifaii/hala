@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 const BrandingShowcase = dynamic(() => import('@/components/branding/BrandingShowcase'));
 const BrandingServices = dynamic(() => import('@/components/branding/BrandingServices'));
 const BrandingExpertise = dynamic(() => import('@/components/branding/BrandingExpertise'));
-const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
+const CustomTestimonials = dynamic(() => import('@/components/Home/Testimonials'));
 const BrandingFAQ = dynamic(() => import('@/components/branding/BrandingFAQ'));
 const BrandingBlogs = dynamic(() => import('@/components/branding/BrandingBlogs'));
 const OutroMessage = dynamic(() => import('@/components/About/OutroMessage'));
@@ -46,7 +46,7 @@ export default function BrandingPage() {
       <BrandingExpertise />
       
       {/* Testimonials Section */}
-      <Testimonials straightBottomCorners={true} />
+      <CustomTestimonials />
 
       {/* FAQ Section */}
       <BrandingFAQ />

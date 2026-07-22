@@ -38,7 +38,8 @@ const SERVICES: ServiceItem[] = [
   { 
     Icon: LayoutTemplate, 
     title: 'Web Development', 
-    desc: 'Fast, modern, and responsive websites' 
+    desc: 'Fast, modern, and responsive websites',
+    href: '/website-development'
   },
   { 
     Icon: BarChart3, 

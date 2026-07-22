@@ -97,7 +97,7 @@ function StickyCard({
 
 export default function AboutValues() {
   return (
-    <section className="bg-white text-[#111111] w-full pt-10 md:pt-16 pb-24 md:pb-36 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white text-[#111111] w-full pt-10 md:pt-16 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-start">
 

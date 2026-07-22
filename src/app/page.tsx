@@ -1,19 +1,20 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar/Navbar';
-import Hero from '@/components/Hero/Hero';
-import MarketingSolutions from '@/components/MarketingSolutions/MarketingSolutions';
+import Hero from '@/components/Home/HeroSection';
+import MarketingSolutions from '@/components/Home/MarketingSolutions';
 
-const OurServices = dynamic(() => import('@/components/OurServices/OurServices'));
-const IndustriesWeCover = dynamic(() => import('@/components/IndustriesWeCover/IndustriesWeCover'));
-const CaseStudies = dynamic(() => import('@/components/CaseStudies/CaseStudies'));
-const WhyChooseHala = dynamic(() => import('@/components/WhyChooseHala/WhyChooseHala'));
-const OurJourney = dynamic(() => import('@/components/OurJourney/OurJourney'));
-const OurProcess = dynamic(() => import('@/components/OurProcess/OurProcess'));
-const ScrollStacking = dynamic(() => import('@/components/ScrollStacking/ScrollStacking'));
-const Testimonials = dynamic(() => import('@/components/Testimonials/Testimonials'));
-const ContactConsultation = dynamic(() => import('@/components/ContactConsultation/ContactConsultation'));
-const Footer = dynamic(() => import('@/components/Footer/Footer'));
+const OurServices = dynamic(() => import('@/components/Home/Services'));
+const IndustriesWeCover = dynamic(() => import('@/components/Home/IndustriesWeCover'));
+const CaseStudies = dynamic(() => import('@/components/Home/CaseStudies'));
+const WhyChooseHala = dynamic(() => import('@/components/Home/WhyChooseUs'));
+const OurJourney = dynamic(() => import('@/components/Home/OurJourney'));
+const OurProcess = dynamic(() => import('@/components/Home/HowItWorks'));
+
+const CustomTestimonials = dynamic(() => import('@/components/Home/Testimonials'));
+const BrandingBlogs = dynamic(() => import('@/components/Home/Blogs'));
+const ContactConsultation = dynamic(() => import('@/components/Home/ContactCTA'));
+const Footer = dynamic(() => import('@/components/Home/Footer'));
 
 export const metadata: Metadata = {
   title: 'Hala Technology | Digital Marketing & Web Development',
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
     canonical: 'https://halatechnologies.com',
   },
 };
+
 export default function Home() {
   return (
     <div className="font-sans bg-[#111111] text-[#111] overflow-x-hidden">
@@ -46,14 +48,13 @@ export default function Home() {
         <IndustriesWeCover />
         <CaseStudies />
         <WhyChooseHala />
-        <ScrollStacking 
-          journeyComponent={<OurJourney />} 
-          processComponent={<OurProcess />} 
-        />
-        <Testimonials />
+        <OurJourney />
+        <OurProcess />
+        <CustomTestimonials />
+        <BrandingBlogs />
         <ContactConsultation />
       </main>
-      <div className="bg-white pt-16 md:pt-24 pb-0">
+      <div className="bg-white w-full relative z-20">
         <Footer />
       </div>
     </div>
